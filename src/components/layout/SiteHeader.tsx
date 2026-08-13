@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -51,83 +52,85 @@ export function SiteHeader() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header
-      data-register="console"
-      data-print="hide"
-      className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled
-          ? "border-b border-line bg-abyss/92 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
-      }`}
-    >
-      <div className="shell flex items-center justify-between gap-4" style={{ minHeight: "var(--header-h)" }}>
-        <Link
-          href="/"
-          className="group flex items-center gap-3"
-          aria-label={`${identity.name}, home`}
-        >
-          <span
-            aria-hidden="true"
-            className="grid size-[26px] place-items-center border border-orch/70 text-orch transition-colors group-hover:bg-orch group-hover:text-[#1c1204]"
-            style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.04em" }}
-          >
-            {identity.monogram}
-          </span>
-          <span className="t-key hidden text-console-ink sm:block">
-            {identity.name}
-          </span>
-        </Link>
-
-        {/* desktop navigation */}
-        <nav aria-label="Primary" className="hidden lg:block">
-          <ul className="flex items-center gap-1">
-            {primaryNav.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  aria-current={isActive(item.href) ? "page" : undefined}
-                  className={`t-key relative block px-3 py-2 transition-colors ${
-                    isActive(item.href)
-                      ? "text-orch"
-                      : "text-console-muted hover:text-console-ink"
-                  }`}
-                >
-                  {item.label}
-                  <span
-                    aria-hidden="true"
-                    className={`absolute inset-x-3 bottom-1 h-px origin-left bg-orch transition-transform duration-300 ease-out ${
-                      isActive(item.href) ? "scale-x-100" : "scale-x-0"
-                    }`}
-                  />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className="flex items-center gap-2">
+    <>
+      <header
+        data-register="console"
+        data-print="hide"
+        className={`sticky top-0 z-50 transition-colors duration-300 ${
+          scrolled
+            ? "border-b border-line bg-abyss/92 backdrop-blur-md"
+            : "border-b border-transparent bg-transparent"
+        }`}
+      >
+        <div className="shell flex items-center justify-between gap-4" style={{ minHeight: "var(--header-h)" }}>
           <Link
-            href={headerAction.href}
-            className="action action-ghost hidden !min-h-[38px] !text-[0.6875rem] sm:inline-flex"
+            href="/"
+            className="group flex items-center gap-3"
+            aria-label={`${identity.name}, home`}
           >
-            {headerAction.label}
-          </Link>
-          <button
-            ref={openerRef}
-            type="button"
-            onClick={() => setOpen(true)}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            className="t-key inline-flex min-h-[44px] items-center gap-2 border border-line px-3 text-console-ink transition-colors hover:border-orch hover:text-orch lg:hidden"
-          >
-            Menu
-            <span aria-hidden="true" className="grid gap-[3px]">
-              <span className="block h-px w-4 bg-current" />
-              <span className="block h-px w-4 bg-current" />
+            <span
+              aria-hidden="true"
+              className="grid size-[26px] place-items-center border border-orch/70 text-orch transition-colors group-hover:bg-orch group-hover:text-[#1c1204]"
+              style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.04em" }}
+            >
+              {identity.monogram}
             </span>
-          </button>
+            <span className="t-key hidden text-console-ink sm:block">
+              {identity.name}
+            </span>
+          </Link>
+
+          {/* desktop navigation */}
+          <nav aria-label="Primary" className="hidden lg:block">
+            <ul className="flex items-center gap-1">
+              {primaryNav.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                    className={`t-key relative block px-3 py-2 transition-colors ${
+                      isActive(item.href)
+                        ? "text-orch"
+                        : "text-console-muted hover:text-console-ink"
+                    }`}
+                  >
+                    {item.label}
+                    <span
+                      aria-hidden="true"
+                      className={`absolute inset-x-3 bottom-1 h-px origin-left bg-orch transition-transform duration-300 ease-out ${
+                        isActive(item.href) ? "scale-x-100" : "scale-x-0"
+                      }`}
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="flex items-center gap-2">
+            <Link
+              href={headerAction.href}
+              className="action action-ghost hidden !min-h-[38px] !text-[0.6875rem] sm:inline-flex"
+            >
+              {headerAction.label}
+            </Link>
+            <button
+              ref={openerRef}
+              type="button"
+              onClick={() => setOpen(true)}
+              aria-expanded={open}
+              aria-controls="mobile-nav"
+              className="t-key inline-flex min-h-[44px] items-center gap-2 border border-line px-3 text-console-ink transition-colors hover:border-orch hover:text-orch lg:hidden"
+            >
+              Menu
+              <span aria-hidden="true" className="grid gap-[3px]">
+                <span className="block h-px w-4 bg-current" />
+                <span className="block h-px w-4 bg-current" />
+              </span>
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       {/* mobile sheet */}
       {open ? (
@@ -189,6 +192,6 @@ export function SiteHeader() {
           </nav>
         </div>
       ) : null}
-    </header>
+    </>
   );
 }
