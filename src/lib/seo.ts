@@ -38,7 +38,7 @@ export function pageMetadata({
   const url = absoluteUrl(path);
 
   return {
-    title,
+    title: path === "/" ? { absolute: title } : title,
     description,
     keywords,
     alternates: { canonical: url },

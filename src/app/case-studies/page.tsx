@@ -17,7 +17,7 @@ import { breadcrumbSchema, itemListSchema, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Case studies",
   description:
-    "Four Oracle Integration Cloud integrations built at Mastek, written up as architecture and technique. Client, vendor, project and system names are omitted throughout.",
+    "Four Oracle Fusion integration case studies: retirement contributions, expenses, employee lifecycle and bank accounts, with reconciliation.",
   path: "/case-studies",
   keywords: [
     "Oracle Integration Cloud case study",

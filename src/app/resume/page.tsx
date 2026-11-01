@@ -6,28 +6,19 @@ import { caseStudies } from "@/content/case-studies";
 import { deliveryMetrics } from "@/content/metrics";
 import { credentials, experience, resume, skills } from "@/content/pages";
 import { projects } from "@/content/projects";
-import { identity } from "@/content/site";
+import { identity, resumeDownload } from "@/content/site";
 import { breadcrumbSchema, pageMetadata, profilePageSchema } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Résumé",
   description:
-    "Résumé for Vidit Pujara, Oracle ERP Technical Consultant at Mastek. Oracle Integration Cloud, Oracle Fusion HCM and Financials, BI Publisher, HDL, FBDI, REST and SOAP, Oracle SQL.",
+    "Download Vidit Pujara’s Oracle Fusion and OIC résumé: integration delivery, BI Publisher, production support and verified certifications.",
   path: "/resume",
   type: "profile",
   keywords: ["Oracle ERP consultant resume", "OIC developer CV"],
 });
 
-/**
- * The résumé is the one page that leaves the console entirely.
- *
- * The rest of the site is an instrument; this is a document, so it is set on
- * white at a document measure and styled for the printer. There is no download
- * button: the only résumé file supplied with this project is the historical
- * student résumé, which predates the Oracle role and carries a phone number
- * that is not published anywhere on this site. A button pointing at a stale
- * file is worse than no button. Printing this page produces a current one.
- */
+/** Print-friendly web résumé with a separately reviewed public PDF. */
 export default function ResumePage() {
   const featuredProjects = projects.filter((project) =>
     ["triptogether", "sherbimet", "plezer-construction"].includes(project.slug),
@@ -62,7 +53,10 @@ export default function ResumePage() {
             <p className="t-small measure mt-3 text-record-muted">
               {resume.printNote}
             </p>
-            <div className="mt-5">
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a href={resumeDownload.href} download={resumeDownload.filename} className="action action-primary">
+                Download résumé (PDF)
+              </a>
               <PrintButton />
             </div>
           </div>
@@ -87,16 +81,6 @@ export default function ResumePage() {
                   className="link inline-block min-h-[26px] py-[3px]"
                 >
                   linkedin.com/in/viditpujara
-                </a>
-              </li>
-              <li>
-                <a
-                  href={identity.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link inline-block min-h-[26px] py-[3px]"
-                >
-                  github.com/viditpujara
                 </a>
               </li>
               <li>

@@ -1,0 +1,51 @@
+name: Portfolio release checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [production, preview]
+    env:
+      NEXT_PUBLIC_SITE_ENV: ${{ matrix.environment }}
+      NEXT_PUBLIC_SITE_URL: https://viditpujara.me
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: npm run security:scan -- --history
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npm run typecheck && npm run lint
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: |
+          npm run start -- --port 3100 > /tmp/portfolio-server.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:3100/ > /dev/null; then break; fi
+            sleep 1
+          done
+          python3 scripts/qa-sweep.py http://127.0.0.1:3100 --origin https://viditpujara.me --environment "$NEXT_PUBLIC_SITE_ENV"
+      - run: pip install -r scripts/requirements.txt
+      - run: python3 scripts/verify-resume.py
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

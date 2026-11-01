@@ -5,7 +5,15 @@ build
 .DS_Store
 *.pem
 npm-debug.log*
-.env*.local
+.env
+.env.*
+!.env.example
+.qa-private.json
+playwright-report/
+test-results/
+__pycache__/
+output/
+tmp/
 .vercel
 next-env.d.ts
 tsconfig.tsbuildinfo

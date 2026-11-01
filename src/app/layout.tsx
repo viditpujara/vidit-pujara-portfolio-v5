@@ -6,7 +6,7 @@ import { RevealEngine } from "@/components/ui/RevealEngine";
 import { StructuredData } from "@/components/ui/StructuredData";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { identity, isProductionSite, siteUrl } from "@/content/site";
+import { identity, isProductionSite, primaryNav, siteUrl } from "@/content/site";
 import { personSchema, webSiteSchema } from "@/lib/seo";
 
 /**
@@ -70,7 +70,7 @@ export default function RootLayout({
       <body className="bg-abyss text-console-ink antialiased">
         {/* Without JavaScript nothing may stay hidden behind an observer. */}
         <noscript>
-          <style>{`[data-reveal]{opacity:1!important;transform:none!important}[data-draw]{transform:scaleX(1)!important}[data-packet]{display:none!important}`}</style>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}[data-draw]{transform:scaleX(1)!important}[data-packet]{display:none!important}#mobile-menu-button{display:none}`}</style>
         </noscript>
         <StructuredData data={[personSchema(), webSiteSchema()]} />
         <a
@@ -81,6 +81,18 @@ export default function RootLayout({
         </a>
         <RevealEngine />
         <SiteHeader />
+        <noscript>
+          <nav aria-label="Navigation without JavaScript" className="shell py-4">
+            <details>
+              <summary className="cursor-pointer py-3">Navigation</summary>
+              <ul className="flex flex-wrap gap-x-6 gap-y-3 py-4">
+                {[{ href: "/", label: "Home" }, ...primaryNav, { href: "/resume", label: "Résumé" }].map((item) => (
+                  <li key={item.href}><a className="link inline-block py-2" href={item.href}>{item.label}</a></li>
+                ))}
+              </ul>
+            </details>
+          </nav>
+        </noscript>
         <main id="main" tabIndex={-1} className="focus-visible:outline-none">
           <RouteTransition>{children}</RouteTransition>
         </main>

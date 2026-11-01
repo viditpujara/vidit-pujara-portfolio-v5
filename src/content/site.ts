@@ -1,24 +1,16 @@
-export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : null) ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ||
-  "http://localhost:3000"
-).replace(/\/$/, "");
+import { resolveSiteEnvironment } from "../lib/environment";
+import routes from "./routes.json";
 
-export const isProductionSite = process.env.NEXT_PUBLIC_SITE_ENV === "production";
+export const { siteUrl, isProductionSite } = resolveSiteEnvironment(process.env);
 
 export const googleSiteVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "";
 
 export const identity = {
   name: "Vidit Pujara",
-  publicTitle: "Oracle ERP Technical Consultant",
-  /**
-   * Confirmed by Vidit on 13 August 2026: the official designation is the same
-   * string as the public title. Kept as its own field so the distinction stays
-   * modelled, but it is never rendered twice on one page.
-   */
-  officialDesignation: "Oracle ERP Technical Consultant",
+  publicTitle: "Oracle Fusion Technical Consultant",
+  /** Current HR designation confirmed by Vidit on 1 November 2026. */
+  officialDesignation: "Consultant I",
   employer: "Mastek",
   employmentStart: "2024-07-15",
   employmentPeriod: "July 2024 to Present",
@@ -30,11 +22,11 @@ export const identity = {
   linkedin: "https://www.linkedin.com/in/viditpujara",
   github: "https://github.com/viditpujara",
   monogram: "VP",
-  siteName: "Vidit Pujara, Oracle ERP Technical Consultant",
+  siteName: "Vidit Pujara, Oracle Fusion Technical Consultant",
   positioning:
-    "Oracle ERP Technical Consultant specialising in Oracle Integration Cloud, with experience delivering enterprise integrations across Oracle Fusion HCM and Financials and a developing focus on AI enabled integration architecture.",
+    "Oracle Fusion Technical Consultant specialising in Oracle Integration Cloud, with experience delivering enterprise integrations across Oracle Fusion HCM and Financials and a developing focus on AI enabled integration architecture.",
   footerLine:
-    "Oracle ERP Technical Consultant working on Oracle Integration Cloud, Oracle Fusion HCM and Oracle Fusion Financials.",
+    "Oracle Fusion Technical Consultant working on Oracle Integration Cloud, Oracle Fusion HCM and Oracle Fusion Financials.",
   confidentialityLine:
     "Case studies describe architecture and technique only. Client, vendor and system names are omitted.",
 } as const;
@@ -61,32 +53,13 @@ export const footerNav: NavItem[] = [
 ];
 
 /** Every crawlable public route, used by the sitemap. */
-export const allRoutes: string[] = [
-  "/",
-  "/about",
-  "/experience",
-  "/case-studies",
-  "/case-studies/employee-retirement-contribution-synchronization",
-  "/case-studies/spend-authorization-to-expense-report-automation",
-  "/case-studies/employee-lifecycle-synchronization",
-  "/case-studies/employee-bank-account-synchronization",
-  "/projects",
-  "/projects/sherbimet",
-  "/projects/plezer-construction",
-  "/projects/triptogether",
-  "/projects/pu-nav",
-  "/projects/eventos",
-  "/skills",
-  "/credentials",
-  "/resume",
-  "/contact",
-];
+export const allRoutes: string[] = routes;
 
 export const socialImage = {
-  path: "/images/vidit-pujara-oracle-erp-technical-consultant-og.png",
+  path: "/images/vidit-pujara-oracle-fusion-technical-consultant-og.png",
   width: 1200,
   height: 630,
-  alt: "Vidit Pujara, Oracle ERP Technical Consultant",
+  alt: "Vidit Pujara, Oracle Fusion Technical Consultant",
 } as const;
 
 export const portrait = {
@@ -95,5 +68,10 @@ export const portrait = {
   height: 728,
   alt: "Portrait of Vidit Pujara",
   caption:
-    "Vidit Pujara, Oracle ERP Technical Consultant at Mastek.",
+    "Vidit Pujara, Oracle Fusion Technical Consultant at Mastek.",
+} as const;
+
+export const resumeDownload = {
+  href: "/vidit-pujara-oracle-fusion-technical-consultant-resume.pdf",
+  filename: "Vidit_Pujara_Oracle_Fusion_Technical_Consultant_OIC.pdf",
 } as const;

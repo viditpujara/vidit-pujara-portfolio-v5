@@ -33,7 +33,7 @@ export async function generateMetadata({
 
   return pageMetadata({
     title: project.name,
-    description: `${project.tagline}. ${project.summary}`.slice(0, 300),
+    description: `${project.name}: ${project.tagline}. ${project.ownership} project by Vidit Pujara.`,
     path: `/projects/${project.slug}`,
     type: "article",
     keywords: project.stack.slice(0, 8),

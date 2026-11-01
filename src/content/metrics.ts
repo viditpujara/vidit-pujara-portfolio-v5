@@ -45,11 +45,6 @@ export const deliveryMetrics: DeliveryMetric[] = [
     note: "Design through go live",
   },
   {
-    value: "2",
-    label: "Additional projects supported after go live",
-    note: "Error investigation and reprocessing",
-  },
-  {
     value: "15 to 20",
     label: "Team size Vidit worked within on delivery projects",
     note: "Approximate delivery team size",
@@ -132,17 +127,16 @@ export const graphProcessingVolume = {
 /* Graph 03: implementation and support coverage. */
 export const graphCoverage = {
   id: "graph-coverage",
-  title: "Implementation and support coverage",
+  title: "Implementation coverage",
   caption:
-    "Implementation projects were delivered from design through go live. Support projects were joined after go live.",
+    "Implementation projects were delivered from design through go live. OIC production support spans multiple client environments; no numeric support count is claimed.",
   axisMax: 4,
   unit: "projects",
   rows: [
     { label: "End to end implementation projects", value: 3, display: "3" },
-    { label: "Additional projects supported", value: 2, display: "2" },
   ],
   summary:
-    "Three projects were delivered end to end from design through go live, and two further projects were supported after go live.",
+    "Three implementation projects included assigned integrations from design through go live. Multiple client environments received concurrent OIC production support, alongside Oracle ADF application support.",
 };
 
 /* Graph 04: selected project populations. */

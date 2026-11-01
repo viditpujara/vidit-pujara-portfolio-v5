@@ -31,9 +31,9 @@ import { identity } from "@/content/site";
 import { pageMetadata, profilePageSchema } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: `${identity.name} | Oracle ERP Technical Consultant`,
+  title: `${identity.name} | ${identity.publicTitle} (OIC)`,
   description:
-    "Oracle ERP Technical Consultant specialising in Oracle Integration Cloud, delivering enterprise integrations across Oracle Fusion HCM and Financials with BI Publisher, REST APIs, SOAP services, HDL, FBDI and Oracle SQL.",
+    "Oracle Fusion Technical Consultant at Mastek building OIC integrations and BI Publisher reports for Oracle Fusion HCM and Financials.",
   path: "/",
   type: "profile",
   keywords: [

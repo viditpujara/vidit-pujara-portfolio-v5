@@ -19,7 +19,7 @@ import { breadcrumbSchema, pageMetadata, profilePageSchema } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
-    "Vidit Pujara, Oracle ERP Technical Consultant at Mastek since July 2024. The route from a computer science background into Oracle Integration Cloud delivery, and the direction it is moving in.",
+    "Oracle Fusion Technical Consultant in Ahmedabad. Consultant I at Mastek, specialising in OIC integrations, validation and reconciliation.",
   path: "/about",
   type: "profile",
   keywords: ["Oracle ERP consultant profile", "OIC developer background"],

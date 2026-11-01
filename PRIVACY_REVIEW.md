@@ -1,63 +1,32 @@
-# Privacy and confidentiality review, Version 5
+# Privacy and confidentiality
 
-## Standing rules
+Updated 1 November 2026.
 
-1. No client name, vendor name, internal project name, system identifier,
-   payload detail, schema, endpoint, credential or internal recipient appears in
-   rendered output, in markup, in diagrams, in decorative text or in image
-   assets.
-2. Case studies describe architecture and technique. They name Oracle products,
-   which is the technology being described, and nothing else.
-3. No employer screenshot, no production data, no fabricated client logo and no
-   invented testimonial.
-4. No phone number.
-5. Approximate figures stay approximate. A range is never converted to a single
-   number to make a visual cleaner.
+Enterprise client names, system identifiers, payloads, internal recipients and
+production screenshots must not appear in published content. Oracle product names
+and Mastek as employer are intentional. No public phone number is included in the
+web résumé or regenerated download. Approximate counts retain their scope.
 
-## How the rules are enforced
+Literal private identifiers have been removed from the public QA denylist. Optional
+private terms live in ignored `.qa-private.json` or a file selected through
+`QA_PRIVATE_TERMS_FILE`; failures redact values. Historical Git objects can still
+contain the previous fixture. A coordinated history cleanup remains an account-side
+action; ignore rules and current-tree deletion do not erase it.
 
-Confidentiality is stated on the page, not hidden in a policy document. The case
-studies index carries the boundary in its header, every case study repeats it
-beside the role statement, the experience page carries it under the scope note,
-and the footer carries it site wide.
+`.env` and `.env.*` are ignored, except `.env.example`. Secret scanning combines a
+small redacted local pattern check with Gitleaks CI. No scan guarantees absence of
+all confidential information or proves third-party repository security.
 
-`scripts/qa-sweep.py` scans both the visible text and the raw markup of all 18
-routes for a blocked string list, using whole word matching for short codes so
-that a real word cannot mask a false pass. The list covers client and vendor
-names recorded in the previous privacy reviews, the historical phone number, the
-superseded email address, internal tooling names, and host names that should
-never be published such as `localhost` and `vercel.app`.
+The app has no forms, cookies, analytics or persistent user storage. Fonts and
+images are self-hosted. Outbound links use noopener/noreferrer. Copy-email writes
+only on the user's click. No new data collector was added.
 
-Result on the current build: **no blocked string found in visible text or in
-markup on any route.**
+TripTogether's direct repository link is removed pending key classification,
+provider revocation and history cleanup. Public Supabase keys are designed for
+clients; RLS/auth policies still need review. Elevated keys and Gemini secrets must
+stay server-side. Removal of the link is containment, not credential revocation.
 
-## Diagram content
-
-Every figure is built from generic flow nodes: source systems, staging,
-comparison, orchestration, technique, target, reconciliation. Stage titles
-describe function, never a system. The hero instrument names only Oracle
-products and generic categories. No figure contains sample data, a file name, a
-directory, an endpoint or an identifier.
-
-## Third parties
-
-The site loads nothing from a third party at runtime. No analytics, no tag
-manager, no font host, no embedded media, no comment system, no form backend.
-Outbound links are limited to LinkedIn, GitHub, the five project repositories
-and the issuer verification pages for credentials. All open in a new tab with
-`rel="noopener noreferrer"` and announce that they do.
-
-## Personal data
-
-The site collects nothing and stores nothing. There is no form, no cookie set by
-the application, and no client side storage. The contact route is a `mailto`
-link plus a copy to clipboard control, which acts only on the user's own
-clipboard on their own click.
-
-## Residual risk carried from earlier versions
-
-**The TripTogether repository still has service credentials in its git history.**
-The `.env` file was removed from the working tree, which does not remove it from
-history. Version 5 links that repository publicly from `/projects/triptogether`.
-Rotation and a history rewrite are required before that link is shared widely.
-This is the highest priority item in `REMAINING_MANUAL_ACTIONS.md`.
+Headers now enforce framing, object, base-URL and form-target restrictions. Resource
+restrictions are staged in a Report-Only CSP compatible with static Next hydration;
+inline scripts/styles remain allowed in that staged policy. Existing hosting HSTS
+is outside the local configuration and must be rechecked after deployment.

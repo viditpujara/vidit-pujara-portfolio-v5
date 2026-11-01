@@ -18,7 +18,7 @@ import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Credentials",
   description:
-    "Certifications and education, including Oracle APEX Cloud Certified Developer Professional and Microsoft fundamentals certifications. Credentials readable on the issuer's own verification page are marked verified.",
+    "Oracle APEX Professional and Microsoft certifications, issuer verification links, education and coursework for Vidit Pujara.",
   path: "/credentials",
   keywords: [
     "Oracle APEX Cloud Certified Developer Professional",

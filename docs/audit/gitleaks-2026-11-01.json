@@ -1,0 +1,6 @@
+{
+  "tool": "gitleaks",
+  "version": "8.30.1",
+  "scope": "reachable Git history (3 commits at scan time)",
+  "findings": 0
+}

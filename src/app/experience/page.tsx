@@ -29,7 +29,7 @@ import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Experience",
   description:
-    "Oracle integration delivery at Mastek since July 2024. Assigned integration modules across Oracle Fusion HCM and Oracle Fusion Financials, delivered from design through post go live support.",
+    "Consultant I at Mastek since July 2024, delivering Oracle Fusion integrations, multi-client OIC production support and Oracle ADF application support.",
   path: "/experience",
   keywords: [
     "Oracle Integration Cloud delivery",
