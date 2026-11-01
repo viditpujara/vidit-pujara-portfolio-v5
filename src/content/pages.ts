@@ -1,12 +1,14 @@
+import { identity } from "./site";
+
 export const home = {
-  categoryLine: "Oracle Integration Cloud, Oracle Fusion HCM and Financials",
+  categoryLine: "Oracle Integration Cloud (OIC) · Oracle Fusion HCM and Financials",
   name: "Vidit Pujara",
-  title: "Oracle ERP Technical Consultant",
+  title: identity.publicTitle,
   positioning:
     "I design and deliver Oracle Fusion HCM and Financials integrations using Oracle Integration Cloud, BI Publisher, REST APIs, SOAP services, HDL, FBDI, Oracle SQL and established enterprise integration patterns.",
   direction:
     "I am expanding this enterprise integration foundation through product engineering, Oracle VBCS, and AI enabled integration architecture.",
-  experienceLabel: "Oracle ERP Technical Consultant at Mastek, since July 2024",
+  experienceLabel: `${identity.officialDesignation} at ${identity.employer}, since July 2024`,
   deliveryRecordHeading: "Delivery record",
   positioningEyebrow: "Positioning",
   positioningStatement:
@@ -61,12 +63,13 @@ export const home = {
     "Software built outside enterprise delivery, documented from the public repositories.",
   experienceEyebrow: "Experience",
   experienceHeading: "Mastek, since July 2024",
-  experienceRole: "Oracle ERP Technical Consultant",
+  experienceRole: identity.officialDesignation,
   experienceBody:
     "First full time role after graduation. Assigned integration modules across Oracle Fusion HCM and Oracle Fusion Financials, working from design through post go live support under the mentorship of technical leads.",
   experiencePoints: [
     "Three implementation projects delivered from start to finish",
-    "Two additional projects supported after go live",
+    "Concurrent OIC production support across multiple client environments",
+    "Oracle ADF application support alongside OIC delivery",
     "Work promoted across Development, Test, UAT and Production",
     "Delivery teams of approximately 15 to 20 members",
   ],
@@ -88,7 +91,7 @@ export const about = {
   intro:
     "A short, factual account of the current role, the background behind it, and the direction it is moving in.",
   facts: [
-    { label: "Current role", value: "Oracle ERP Technical Consultant, Mastek" },
+    { label: "Official designation", value: `${identity.officialDesignation}, ${identity.employer}` },
     { label: "Focus", value: "Oracle Integration Cloud" },
     { label: "Since", value: "July 2024" },
     { label: "Based in", value: "Ahmedabad, Gujarat, India" },
@@ -99,7 +102,7 @@ export const about = {
     {
       index: "01",
       title: "Where the work sits now",
-      body: "Oracle ERP Technical Consultant at Mastek since July 2024. Day to day that means owning assigned integration modules on Oracle Fusion HCM and Oracle Fusion Financials, from design through deployment and post go live support.",
+      body: `${identity.officialDesignation} at ${identity.employer} since July 2024, specialising in Oracle Integration Cloud. Day to day that means owning assigned integration modules on Oracle Fusion HCM and Oracle Fusion Financials, from design through deployment and post go live support.`,
     },
     {
       index: "02",
@@ -141,7 +144,7 @@ export const about = {
     },
     {
       title: "Client detail is removed",
-      body: "No client, vendor, project or system names appear anywhere. Integrations are described by architecture and technique only.",
+      body: "Enterprise client and system identities are omitted. Integrations are described by architecture and technique only.",
     },
     {
       title: "Projects are read from source",
@@ -155,9 +158,9 @@ export const experience = {
   title: "Oracle integration delivery at Mastek",
   intro:
     "Assigned integration modules across Oracle Fusion HCM and Oracle Fusion Financials, delivered from design through post go live support.",
-  company: "Mastek",
-  designation: "Oracle ERP Technical Consultant",
-  period: "July 2024 to Present",
+  company: identity.employer,
+  designation: identity.officialDesignation,
+  period: identity.employmentPeriod,
   startNote: "Started 15 July 2024",
   body: "First full time role after graduation. Assigned integration modules across Oracle Fusion HCM and Oracle Fusion Financials, working from design through post go live support under the mentorship of technical leads.",
   categories: [
@@ -185,14 +188,15 @@ export const experience = {
       title: "Environments and support",
       points: [
         "Promoted and validated work across Development, Test, UAT and Production.",
-        "Supported integrations after implementation, including error investigation and reprocessing.",
+        "Supported live OIC integrations for multiple client environments concurrently, investigating run logs and exception reports, identifying root causes, and coordinating correction and reprocessing.",
+        "Provided Oracle ADF application support for a UK local-government client alongside OIC support work.",
       ],
     },
     {
       title: "Delivery context",
       points: [
         "Contributed to three implementation projects from start to finish.",
-        "Supported two additional projects.",
+        "Supported multiple client environments concurrently.",
         "Worked within delivery teams of approximately 15 to 20 members.",
       ],
     },
@@ -271,7 +275,7 @@ export const skills = {
         },
         {
           title: "Data",
-          items: ["Oracle SQL", "Oracle Database", "SQL", "MySQL"],
+          items: ["Oracle SQL", "PL/SQL", "Oracle Database", "SQL", "MySQL"],
         },
         {
           title: "Engineering",
@@ -290,18 +294,15 @@ export const skills = {
     },
     {
       index: "02",
-      title: "Trained or working knowledge",
+      title: "Supporting Oracle skills",
       intro:
-        "Formally trained or used in project and academic work rather than on current Oracle delivery.",
+        "VBCS training and working knowledge, alongside Oracle ADF application support. Development expertise is not implied by support exposure.",
       emphasis: "secondary",
       groups: [
         {
           title: "Oracle platform",
-          items: ["Oracle VBCS", "Oracle ADF", "Oracle Core Java"],
+          items: ["Oracle VBCS (working knowledge)", "Oracle ADF (application support)", "Oracle Core Java"],
         },
-        { title: "Mobile", items: ["Android development", "Android Studio"] },
-        { title: "Microsoft stack", items: ["VB.NET", ".NET", ".NET Core"] },
-        { title: "Tooling and web", items: ["Eclipse", "PyCharm", "Ajax"] },
       ],
     },
     {
@@ -500,7 +501,7 @@ export const contact = {
 
 export const resume = {
   summary:
-    "Oracle ERP Technical Consultant specialising in Oracle Integration Cloud, with experience delivering enterprise integrations across Oracle Fusion HCM and Oracle Fusion Financials, and a developing focus on AI enabled integration architecture. Around twenty to twenty five integrations designed, built, tested and deployed across Development, Test, UAT and Production, supported by BI Publisher reporting, HDL and FBDI loading, REST and SOAP interfaces, SFTP file handling and database driven processing.",
+    "Oracle Fusion Technical Consultant specialising in Oracle Integration Cloud, with experience delivering enterprise integrations across Oracle Fusion HCM and Oracle Fusion Financials, and a developing focus on AI enabled integration architecture. Around twenty to twenty five integrations designed, built, tested and deployed across Development, Test, UAT and Production, supported by BI Publisher reporting, HDL and FBDI loading, REST and SOAP interfaces, SFTP file handling and database driven processing.",
   metricsNote:
     "Manual expense report creation and manual employee bank account creation were each eliminated for one automated workflow. Figures are approximate where counted rather than measured.",
   coreSkills: [
@@ -509,7 +510,7 @@ export const resume = {
       value:
         "Oracle Integration Cloud, Oracle Fusion HCM, Oracle Fusion Financials, BI Publisher, HDL, FBDI, REST APIs, SOAP services, SFTP, Technical architecture",
     },
-    { label: "Data", value: "Oracle SQL, Oracle Database, SQL, MySQL" },
+    { label: "Data", value: "Oracle SQL, PL/SQL, Oracle Database, SQL, MySQL" },
     {
       label: "Engineering",
       value:
@@ -517,5 +518,5 @@ export const resume = {
     },
   ],
   printNote:
-    "Use the browser print dialogue to save this page as a PDF. It is styled for print, and navigation, footer and this panel are removed from the output. A download button will be added here once a current résumé PDF is supplied. See README.md for where to place the file.",
+    "Use the browser print dialogue to save this page as a PDF. It is styled for print, and navigation, footer and this panel are removed from the output. You can also download the reviewed two-page PDF, with the current designation and certifications.",
 };

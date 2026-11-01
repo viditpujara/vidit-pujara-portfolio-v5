@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -12,14 +11,18 @@ import { headerAction, identity, primaryNav } from "@/content/site";
  * Transparent over the hero, then it takes on a panel background and a hairline
  * rule once the page has scrolled, so the type underneath never collides with
  * the navigation. The mobile sheet is a real dialogue: focus moves into it, Esc
- * closes it, the background is inert to scroll, and the open state is derived
- * from the route so a navigation always closes it.
+ * closes it, the native modal makes the background inert, and route changes remount
+ * the header so navigation always releases the dialog and scroll lock.
  */
 export function SiteHeader() {
   const pathname = usePathname();
+  return <HeaderContent key={pathname} pathname={pathname} />;
+}
+
+function HeaderContent({ pathname }: { pathname: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const closeRef = useRef<HTMLButtonElement | null>(null);
+  const dialogRef = useRef<HTMLDialogElement | null>(null);
   const openerRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
@@ -30,21 +33,20 @@ export function SiteHeader() {
   }, []);
 
   useEffect(() => {
-    if (!open) return;
+    const dialog = dialogRef.current;
+    if (!open || !dialog) return;
+    dialog.showModal();
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setOpen(false);
-        openerRef.current?.focus();
-      }
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const onResize = () => {
+      if (desktop.matches) setOpen(false);
     };
-    window.addEventListener("keydown", onKey);
+    desktop.addEventListener("change", onResize);
     return () => {
+      dialog.close();
       document.body.style.overflow = previous;
-      window.removeEventListener("keydown", onKey);
+      desktop.removeEventListener("change", onResize);
     };
   }, [open]);
 
@@ -115,6 +117,7 @@ export function SiteHeader() {
               {headerAction.label}
             </Link>
             <button
+              id="mobile-menu-button"
               ref={openerRef}
               type="button"
               onClick={() => setOpen(true)}
@@ -133,13 +136,16 @@ export function SiteHeader() {
       </header>
 
       {/* mobile sheet */}
-      {open ? (
-        <div
+      <dialog
+          ref={dialogRef}
           id="mobile-nav"
-          role="dialog"
-          aria-modal="true"
+          onCancel={() => setOpen(false)}
+          onClose={() => {
+            setOpen(false);
+            if (openerRef.current?.offsetParent) openerRef.current.focus();
+          }}
           aria-label="Site navigation"
-          className="fixed inset-0 z-50 flex flex-col bg-abyss lg:hidden"
+          className="fixed inset-0 m-0 h-dvh max-h-none w-screen max-w-none border-0 bg-abyss p-0 text-console-ink open:flex open:flex-col"
         >
           <div
             className="shell flex items-center justify-between border-b border-line"
@@ -147,7 +153,6 @@ export function SiteHeader() {
           >
             <span className="t-key text-console-muted">Navigation</span>
             <button
-              ref={closeRef}
               type="button"
               onClick={() => {
                 setOpen(false);
@@ -190,8 +195,7 @@ export function SiteHeader() {
             </ul>
             <p className="t-data mt-8 text-console-dim">{identity.publicTitle}</p>
           </nav>
-        </div>
-      ) : null}
+      </dialog>
     </>
   );
 }

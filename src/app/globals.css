@@ -564,6 +564,12 @@
    site is delivered fully arrived: no transitions, no travelling packets, all
    pipeline stages lit, all counters at their final value. Nothing is hidden. */
 @media (prefers-reduced-motion: reduce) {
+  .rise,
+  .route-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
   html {
     scroll-behavior: auto;
   }

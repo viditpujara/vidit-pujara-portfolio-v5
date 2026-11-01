@@ -82,7 +82,7 @@ export const projects: Project[] = [
         heading: "Administrative panel",
         points: [
           "PHP and MySQL application built on the AdminLTE interface, with a shared class layer, a session check on every protected page and a login flow.",
-          "Create, edit and list screens for workers, users, services, subservices, packages, pincodes and languages, each backed by prepared queries against its own table.",
+          "Create, edit and list screens for workers, users, services, subservices, packages, pincodes and languages, covering their respective tables.",
           "Seven reporting views covering bookings, workers, users, packages, subservices, subcategories and feedback.",
           "A relational schema of fifteen tables covering admin, worker, user, city, area, pincode, service, subservice, category, subcategory, package, language, request, feedback and status reference data.",
           "Forty three PHP files are published. Eleven of them are empty placeholders, including the dashboard, the city and area screens, the booking and feedback lists, and the change and forgot password screens. Nine directories, among them the shared class, api, ajax and asset directories, each hold a single empty placeholder file rather than working code. The modules above are read from the remaining thirty two files, which do contain working source.",
@@ -214,17 +214,13 @@ export const projects: Project[] = [
     tagline: "Group trip planning with an automated expense ledger",
     summary:
       "A group trip planner with two roles. Organisers create trips, manage participants and paste raw itinerary text that a language model turns into structured events. Participants log expenses, and the application settles who owes whom and exports the result as PDF and spreadsheet reports.",
-    repositories: [
-      {
-        label: "View on GitHub",
-        url: "https://github.com/viditpujara/triptogether-planner",
-      },
-    ],
+    // Link withheld until provider revocation and repository cleanup are verified.
+    repositories: [],
     repositoryFindings: [
       {
         heading: "Trip and participant management",
         points: [
-          "Separate administrator and participant roles, enforced through an auth context and a protected route wrapper.",
+          "Separate administrator and participant interfaces, with an auth context and a protected route wrapper. Backend authorization and database policies have not been independently verified.",
           "Administrator pages for a dashboard, trip creation and trip detail. Participant pages for trip list, trip view and expense entry.",
           "Trip status is computed from the current date rather than stored, so a trip moves through upcoming, active, ended and completed on its own.",
           "Authentication supports both a username and password pair and a passphrase, with bcryptjs and hash-wasm present for credential hashing.",
@@ -258,7 +254,7 @@ export const projects: Project[] = [
     ],
     demonstrates: [
       "Solo delivery of a full stack product with a real database",
-      "Role based access control and protected routing",
+      "Administrator and participant interfaces with protected routing",
       "Third party AI integration used for a concrete parsing task rather than as decoration",
       "Financial calculation and document generation",
       "A test setup at both unit and browser level",
@@ -267,7 +263,7 @@ export const projects: Project[] = [
       "Active solo project. Requires a Supabase project and a Google Gemini API key to run. No public demo URL is published in the repository.",
     limitations: [
       "The application was not run in this environment because it needs a live Supabase project and an AI API key.",
-      "An environment file holding service credentials was committed to the repository early on. It has since been removed from the current tree, but credentials committed to a public repository stay reachable in history until the history itself is rewritten, so rotation is the real fix rather than deletion. This is recorded as an accurate observation about the project, not as current practice.",
+      "An environment file holding service credentials was committed to the repository early on. It has since been removed from the current tree, but credentials committed to a public repository stay reachable in history until the history itself is rewritten, so provider revocation and repository cleanup must be verified before the repository link is restored. Public Supabase keys require a separate policy review; elevated secrets must never be shipped to browsers.",
     ],
     ownershipNote: "Built solo.",
     stack: [

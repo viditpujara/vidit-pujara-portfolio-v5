@@ -1,8 +1,9 @@
 # Verification screenshots
 
-Captured from a production build served locally, using headless Chromium, at the
-widths named in each file. They are evidence for the checks recorded in the root
-documents, not design assets.
+Homepage captures were refreshed on 1 November 2026 from the corrected local
+preview build with reduced motion enabled, at the named widths. Other captures
+are historical design evidence from the original version and do not verify the
+current release. Production and preview share the same visual implementation.
 
 | File | What it shows |
 | --- | --- |

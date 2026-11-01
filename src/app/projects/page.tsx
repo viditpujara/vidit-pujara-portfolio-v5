@@ -22,7 +22,7 @@ import { breadcrumbSchema, itemListSchema, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Projects",
   description:
-    "Independent software built outside enterprise delivery, documented from the public repositories. Solo and collaborative work is separated, and anything that could not be verified or run is stated as such.",
+    "Independent and collaborative software projects by Vidit Pujara, with architecture, attribution, technology stacks and repository limitations.",
   path: "/projects",
   keywords: [
     "React Supabase project",

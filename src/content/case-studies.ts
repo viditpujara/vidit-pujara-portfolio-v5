@@ -40,12 +40,12 @@ export const caseStudies: CaseStudy[] = [
     title: "Employee Retirement Contribution Synchronization",
     domain: "Oracle Fusion HCM",
     summary:
-      "A pipe delimited contribution file from an external retirement benefits provider, validated, matched against Oracle Fusion and applied through a generated HDL file with full error reconciliation.",
+      "Pipe-delimited provider files received over SFTP, staged and validated in Oracle Database, compared with Oracle Fusion through BI Publisher and PL/SQL, and loaded as new or changed elections through multi-level HDL, with rejected records mapped back to source lines.",
     metaDescription:
-      "A pipe delimited contribution file from an external retirement benefits provider, validated, matched against Oracle Fusion and applied through a generated HDL file with full error reconciliation.",
+      "Oracle Fusion retirement contributions through SFTP, database staging, BI Publisher, PL/SQL and HDL, with rejected records mapped to source lines.",
     problem:
       "An external retirement benefits provider supplied employee contribution elections in a pipe delimited text file. The records had to be validated, matched to the correct employees in Oracle Fusion, and applied as either new elections or updates to existing ones. Records that failed inside Oracle Fusion had to be traced back to the original source line so the business could correct them.",
-    role: "Designed and built the end to end integration, the supporting BI Publisher extract, the database comparison logic and the exception reporting.",
+    role: "Built as part of my assigned integration modules at Mastek, from technical design through deployment and post-go-live support. Designed and built the end to end integration, the supporting BI Publisher extract, the database comparison logic and the exception reporting.",
     approach: [
       {
         index: "01",
@@ -109,12 +109,12 @@ export const caseStudies: CaseStudy[] = [
     title: "Spend Authorization to Expense Report Automation",
     domain: "Oracle Fusion Financials",
     summary:
-      "Approved spend authorizations converted into Oracle Expenses expense reports through an incremental BI Publisher extraction and a nested REST payload that carries header, lines and attachments together.",
+      "Approved spend authorizations converted into Oracle Expenses reports through incremental BI Publisher extraction and nested REST payloads carrying headers, lines and attachments, removing manual entry for a workflow covering about 300 employees.",
     metaDescription:
-      "Approved spend authorizations converted into Oracle Expenses expense reports through an incremental BI Publisher extraction and a nested REST payload that carries header, lines and attachments together.",
+      "Oracle Expenses automation using incremental BI Publisher extracts and nested REST payloads, removing manual report entry for about 300 employees.",
     problem:
       "Approved spend authorizations had to become expense reports. Doing this by hand meant re keying header details, every expense line and any supporting attachments, for each approved authorization, on a repeating basis.",
-    role: "Built the extraction, the payload construction logic and the Oracle Fusion REST submission.",
+    role: "Built as part of my assigned integration modules at Mastek, from technical design through deployment and post-go-live support. Built the extraction, the payload construction logic and the Oracle Fusion REST submission.",
     approach: [
       {
         index: "01",
@@ -161,12 +161,12 @@ export const caseStudies: CaseStudy[] = [
     title: "Employee Lifecycle Synchronization",
     domain: "Oracle Fusion HCM",
     summary:
-      "An event driven integration that keeps Oracle Fusion aligned with an external HR platform across creation, update, termination and rehire, using field level comparison to decide what actually changes.",
+      "An event-driven OIC integration aligning Oracle Fusion with an external HR platform across hire, update, termination and rehire, routing each event to the right Worker REST operation and applying only changed fields.",
     metaDescription:
-      "An event driven integration that keeps Oracle Fusion aligned with an external HR platform across creation, update, termination and rehire, using field level comparison to decide what actually changes.",
+      "Event-driven OIC worker lifecycle integration using Oracle Fusion Worker REST APIs for hire, update, termination and rehire with field-level changes.",
     problem:
       "An external HR management platform remained the system of record for employee information. Oracle Fusion had to reflect four different lifecycle events, and had to do so without overwriting fields that had not changed.",
-    role: "Built the event handling, the scenario detection logic, the field comparison and the conditional routing to the correct Oracle Worker REST operations.",
+    role: "Built as part of my assigned integration modules at Mastek, from technical design through deployment and post-go-live support. Built the event handling, the scenario detection logic, the field comparison and the conditional routing to the correct Oracle Worker REST operations.",
     approach: [
       {
         index: "01",
@@ -216,12 +216,12 @@ export const caseStudies: CaseStudy[] = [
     title: "Employee Bank Account Synchronization",
     domain: "Oracle Fusion HCM and Expenses",
     summary:
-      "A daily full load file reconciled against Oracle Fusion so that only genuine changes are applied, including bank and branch creation, account replacement and HDL based deactivation.",
+      "A daily full-load bank account file reconciled against Oracle Fusion so only real changes are applied: missing banks and branches created, new accounts associated, replaced accounts deactivated through HDL, and manual account creation removed for the workflow.",
     metaDescription:
-      "A daily full load file reconciled against Oracle Fusion so that only genuine changes are applied, including bank and branch creation, account replacement and HDL based deactivation.",
+      "Daily Oracle Fusion bank-account reconciliation, bank and branch resolution, account association and HDL deactivation with error reporting.",
     problem:
       "Employee bank account information was maintained outside Oracle Fusion but was required inside it for expense reimbursement. The daily feed was a full load, so the integration had to work out which accounts had actually changed instead of rewriting every record.",
-    role: "Built the staging and comparison logic, the bank and branch handling, the account creation and association, the HDL based deactivation path, and the logging and exception reporting.",
+    role: "Built as part of my assigned integration modules at Mastek, from technical design through deployment and post-go-live support. Built the staging and comparison logic, the bank and branch handling, the account creation and association, the HDL based deactivation path, and the logging and exception reporting.",
     approach: [
       {
         index: "01",

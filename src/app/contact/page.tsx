@@ -19,7 +19,7 @@ import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description:
-    "Open to Oracle ERP and Oracle Integration Cloud roles. Email is the fastest route to Vidit Pujara, Oracle ERP Technical Consultant, based in Ahmedabad, Gujarat, India.",
+    "Contact Vidit Pujara about Oracle Fusion and OIC roles. Based in Ahmedabad, with experience in integration delivery and production support.",
   path: "/contact",
   keywords: [
     "hire Oracle Integration Cloud consultant",

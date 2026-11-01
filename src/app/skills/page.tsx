@@ -16,7 +16,7 @@ import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Skills",
   description:
-    "Oracle Integration Cloud, Oracle Fusion HCM and Financials, BI Publisher, HDL, FBDI, REST and SOAP, Oracle SQL and engineering skills, grouped by depth of use rather than scored as percentages.",
+    "Oracle Integration Cloud, Fusion HCM and Financials, BI Publisher, HDL, FBDI, SQL and PL/SQL skills, with supporting Oracle platform knowledge.",
   path: "/skills",
   keywords: [
     "Oracle Integration Cloud skills",
