@@ -3,4 +3,4 @@
 One line per task, newest first. Conventions: [../README.md](../README.md).
 
 - [2026-11-07-repository-governance](2026-11-07-repository-governance/README.md): establish the shared agent governance system (`AGENTS.md`, adapters, docs structure, PR template). PR: [#2](https://github.com/viditpujara/vidit-pujara-portfolio-v5/pull/2).
-- [2026-11-07-case-study-routes](2026-11-07-case-study-routes/README.md): redirect old version hosts and alternative URLs to the canonical site. PR: see the task record.
+- [2026-11-07-case-study-routes](2026-11-07-case-study-routes/README.md): redirect old version hosts and alternative URLs to the canonical site. PR: [#5](https://github.com/viditpujara/vidit-pujara-portfolio-v5/pull/5).

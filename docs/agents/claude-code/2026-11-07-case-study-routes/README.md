@@ -10,7 +10,7 @@ requirements: none (owner request in chat)
 branch: agent/claude-code/2026-11-07-case-study-routes
 status: ready-for-review
 commits: see `git log agent/claude-code/2026-11-07-case-study-routes`
-pr: set after the pull request is opened
+pr: https://github.com/viditpujara/vidit-pujara-portfolio-v5/pull/5
 continues:
 depends-on:
 ---
