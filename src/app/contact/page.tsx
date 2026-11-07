@@ -23,7 +23,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/contact",
   keywords: [
     "hire Oracle Integration Cloud consultant",
-    "Oracle ERP technical consultant Ahmedabad",
+    "Oracle Fusion technical consultant Ahmedabad",
   ],
 });
 
@@ -84,6 +84,17 @@ export default function ContactPage() {
               style={{ ["--rise-delay" as string]: "320ms" }}
             >
               <DataRow label="Email" value={identity.email} />
+              <DataRow
+                label="Phone"
+                value={
+                  <a
+                    href={identity.phoneHref}
+                    className="link inline-block min-h-[26px] py-[3px]"
+                  >
+                    {identity.phone}
+                  </a>
+                }
+              />
               <DataRow
                 label="Based in"
                 value={`${identity.locality}, ${identity.region}, ${identity.country}`}

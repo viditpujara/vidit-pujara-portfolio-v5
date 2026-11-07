@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
     "Download Vidit Pujara’s Oracle Fusion and OIC résumé: integration delivery, BI Publisher, production support and verified certifications.",
   path: "/resume",
   type: "profile",
-  keywords: ["Oracle ERP consultant resume", "OIC developer CV"],
+  keywords: ["Oracle Fusion consultant resume", "OIC developer CV"],
 });
 
 /** Print-friendly web résumé with a separately reviewed public PDF. */
@@ -71,6 +71,14 @@ export default function ResumePage() {
               <li>
                 <a href={`mailto:${identity.email}`} className="link inline-block min-h-[26px] py-[3px]">
                   {identity.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={identity.phoneHref}
+                  className="link inline-block min-h-[26px] py-[3px]"
+                >
+                  {identity.phone}
                 </a>
               </li>
               <li>
@@ -199,7 +207,9 @@ export default function ResumePage() {
               <div key={band.index} className="mb-3">
                 <p className="t-key text-record-muted">{band.title}</p>
                 <p className="t-small mt-1">
-                  {band.groups.flatMap((group) => group.items).join(", ")}
+                  {band.groups
+                    .map((group) => `${group.title}: ${group.items.join(", ")}`)
+                    .join(". ")}
                 </p>
               </div>
             ))}
@@ -251,8 +261,8 @@ export default function ResumePage() {
 
           <Note register="record" className="mt-12 border-t border-rule pt-6">
             Every figure on this résumé is published in the form it was verified
-            in. Ranges stay ranges, and no phone number is published on this
-            site.
+            in. Ranges stay ranges, and the only phone number published on this
+            site is the one at the top of this page.
           </Note>
         </div>
       </Shell>

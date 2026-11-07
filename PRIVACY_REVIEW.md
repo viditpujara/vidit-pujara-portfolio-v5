@@ -4,7 +4,10 @@ Updated 1 November 2026.
 
 Enterprise client names, system identifiers, payloads, internal recipients and
 production screenshots must not appear in published content. Oracle product names
-and Mastek as employer are intentional. No public phone number is included in the
+and Mastek as employer are intentional. Since 7 November 2026 the owner's own phone
+number is published on the owner's instruction (`identity.phone` in `src/content/site.ts`,
+the résumé page, the contact page and the PDF); it is the only phone number the QA
+checks allow. It is now in Git history and on a public site, so expect it to be scraped. No other phone number is included in the
 web résumé or regenerated download. Approximate counts retain their scope.
 
 Literal private identifiers have been removed from the public QA denylist. Optional

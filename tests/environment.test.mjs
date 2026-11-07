@@ -38,5 +38,38 @@ test("résumé facts match the confirmed identity and avoid stale support counts
   const resume = readFileSync("docs/resume.json", "utf8");
   assert.match(resume, /Consultant I \| Mastek/);
   assert.match(resume, /CERTIFICATIONS/);
-  assert.doesNotMatch(resume, /tel:|\+91|two additional/i);
+  assert.doesNotMatch(resume, /two additional/i);
+  const site = readFileSync("src/content/site.ts", "utf8");
+  const phone = JSON.parse(resume).phone;
+  assert.ok(phone && site.includes(`phone: "${phone}"`), "résumé and site phone numbers must match");
+});
+test("web and PDF résumé summaries share the agreed key phrases", () => {
+  const sections = JSON.parse(readFileSync("docs/resume.json", "utf8")).pages.flat();
+  const pdfSummary = sections.find((section) => section.title === "PROFESSIONAL SUMMARY").blocks[0].text;
+  const web = readFileSync("src/content/pages.ts", "utf8");
+  for (const phrase of [
+    "Oracle Integration Cloud (OIC) integrations for Oracle Fusion HCM and Financials",
+    "mapping Oracle load errors back to source records for correction and reprocessing",
+    "Oracle APEX Cloud Certified Developer Professional.",
+  ]) {
+    assert.ok(pdfSummary.includes(phrase), `PDF summary lacks: ${phrase}`);
+    assert.ok(web.includes(phrase), `Web résumé summary lacks: ${phrase}`);
+  }
+});
+test("descriptions used for metadata and structured data stay within 155 characters", () => {
+  const site = readFileSync("src/content/site.ts", "utf8");
+  const positioning = site.match(/positioning:\s*"([^"]+)"/)[1];
+  assert.ok(positioning.length <= 155, `identity.positioning is ${positioning.length} characters`);
+  const files = [];
+  (function walk(dir) {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const path = `${dir}/${entry.name}`;
+      if (entry.isDirectory()) walk(path);
+      else if (entry.name === "page.tsx") files.push(path);
+    }
+  })("src/app");
+  for (const file of files) {
+    for (const match of readFileSync(file, "utf8").matchAll(/description:\s*"([^"]+)"/g))
+      assert.ok(match[1].length <= 155, `${file} description is ${match[1].length} characters`);
+  }
 });

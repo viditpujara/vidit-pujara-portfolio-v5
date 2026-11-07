@@ -19,12 +19,15 @@ export const identity = {
   region: "Gujarat",
   country: "India",
   email: "vidit.pujara@zohomail.in",
+  /** Published on the owner's instruction, 7 November 2026. The only phone number allowed on the site and PDF. */
+  phone: "+91 8401005481",
+  phoneHref: "tel:+918401005481",
   linkedin: "https://www.linkedin.com/in/viditpujara",
   github: "https://github.com/viditpujara",
   monogram: "VP",
   siteName: "Vidit Pujara, Oracle Fusion Technical Consultant",
   positioning:
-    "Oracle Fusion Technical Consultant specialising in Oracle Integration Cloud, with experience delivering enterprise integrations across Oracle Fusion HCM and Financials and a developing focus on AI enabled integration architecture.",
+    "Oracle Fusion Technical Consultant at Mastek building Oracle Integration Cloud integrations and BI Publisher reports for Oracle Fusion HCM and Financials.",
   footerLine:
     "Oracle Fusion Technical Consultant working on Oracle Integration Cloud, Oracle Fusion HCM and Oracle Fusion Financials.",
   confidentialityLine:

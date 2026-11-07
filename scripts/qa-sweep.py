@@ -13,6 +13,14 @@ from html.parser import HTMLParser
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ROUTES = json.loads((ROOT / 'src/content/routes.json').read_text())
+_SITE = (ROOT / 'src/content/site.ts').read_text()
+# The only phone number allowed on the site, taken from identity in site.ts.
+OWNER_PHONE = tuple(m.group(1) if (m := re.search(key + r':\s*"([^"]+)"', _SITE)) else '' for key in ('phone', 'phoneHref'))
+
+def without_owner_phone(value):
+    for item in OWNER_PHONE:
+        if item: value = value.replace(item, '')
+    return value
 
 class Extract(HTMLParser):
     def __init__(self):
@@ -69,7 +77,7 @@ def check_page(html, headers, route, origin, environment, private_terms=()):
     for block in p.jsonld:
         try: visit(json.loads(block))
         except json.JSONDecodeError: errors.append('invalid JSON-LD')
-    if re.search(r'\+91[\s-]*\d[\d\s-]{8,}', ' '.join(p.text)) or 'tel:' in html: errors.append('public phone detail present')
+    if re.search(r'\+91[\s-]*\d[\d\s-]{8,}', without_owner_phone(' '.join(p.text))) or 'tel:' in without_owner_phone(html): errors.append('public phone detail present')
     for term in private_terms:
         if re.search(r'(?<!\w)' + re.escape(term) + r'(?!\w)', html, re.I): errors.append('private denylist match (value redacted)')
     for name in ('x-content-type-options', 'x-frame-options', 'referrer-policy', 'permissions-policy', 'content-security-policy'):

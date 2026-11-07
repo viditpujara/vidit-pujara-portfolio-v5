@@ -2,4 +2,5 @@
 
 One line per task, newest first. Conventions: [../README.md](../README.md).
 
+- [2026-11-07-portfolio-content-alignment](2026-11-07-portfolio-content-alignment/README.md): align the résumé PDF and site copy with the owner's review documents. PR: [#4](https://github.com/viditpujara/vidit-pujara-portfolio-v5/pull/4) (stacked [#3](https://github.com/viditpujara/vidit-pujara-portfolio-v5/pull/3) merged into the governance branch only).
 - [2026-11-07-repository-governance](2026-11-07-repository-governance/README.md): establish the shared agent governance system (`AGENTS.md`, adapters, docs structure, PR template). PR: [#2](https://github.com/viditpujara/vidit-pujara-portfolio-v5/pull/2).
