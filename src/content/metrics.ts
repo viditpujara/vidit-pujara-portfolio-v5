@@ -11,7 +11,7 @@ export type DeliveryMetric = {
 export const deliveryMetrics: DeliveryMetric[] = [
   {
     value: "20 to 25",
-    label: "Oracle integrations designed, built and deployed",
+    label: "Oracle integrations built and deployed",
     note: "Approximate count across Oracle Fusion HCM and Financials",
   },
   {
@@ -97,7 +97,7 @@ export const graphDeliveryScope = {
     { label: "BI Publisher reports", min: 10, max: 15, display: "10 to 15" },
   ],
   summary:
-    "Approximately 20 to 25 Oracle integrations were designed, built and deployed, and approximately 10 to 15 BI Publisher reports were developed. Both values are ranges, not exact totals.",
+    "Approximately 20 to 25 Oracle integrations were built and deployed, and approximately 10 to 15 BI Publisher reports were developed. Both values are ranges, not exact totals.",
 };
 
 /* Graph 02: documented processing volume. */

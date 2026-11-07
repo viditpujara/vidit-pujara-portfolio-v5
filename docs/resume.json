@@ -1,6 +1,7 @@
 {
   "name": "Vidit Pujara",
   "metadataTitle": "Vidit Pujara - Oracle Fusion Technical Consultant (OIC)",
+  "keywords": "Oracle Integration Cloud, OIC, Oracle Fusion, BI Publisher, HDL, FBDI",
   "title": "Oracle Fusion Technical Consultant | Oracle Integration Cloud (OIC)",
   "tagline": "Oracle Fusion HCM and Financials | BI Publisher | HDL | FBDI | REST/SOAP | SQL and PL/SQL",
   "contact": "Ahmedabad, Gujarat, India",
@@ -10,7 +11,7 @@
         "title": "PROFESSIONAL SUMMARY",
         "blocks": [
           {
-            "text": "Oracle Fusion Technical Consultant with 2+ years at Mastek delivering Oracle Integration Cloud solutions for Oracle Fusion HCM and Financials. Experience spans three implementation projects and concurrent multi-client production support. Builds staging, validation and reconciliation into integration flows, including mapping Oracle load errors back to source records for correction and reprocessing."
+            "text": "Oracle Fusion Technical Consultant with 2+ years at Mastek building Oracle Integration Cloud (OIC) integrations for Oracle Fusion HCM and Financials. Built and deployed 20+ inbound and outbound integrations and 10+ BI Publisher reports across three implementation projects and concurrent multi-client production support. Hands-on with REST and SOAP services, HDL, FBDI, SFTP file processing, and Oracle SQL and PL/SQL staging, validation and reconciliation, including mapping Oracle load errors back to source records for correction and reprocessing. Oracle APEX Cloud Certified Developer Professional."
           }
         ]
       },
@@ -30,7 +31,7 @@
             "text": "Delivery: Development/Test/UAT/Production promotion, UAT support, monitoring, failure investigation, exception reporting, error handling and reprocessing."
           },
           {
-            "text": "Supporting skills: Postman; Oracle ADF application support; Oracle VBCS training and working knowledge."
+            "text": "Also: Oracle APEX (certified), Oracle VBCS (working knowledge), Oracle ADF (application support), Postman, Java."
           }
         ]
       },
@@ -41,10 +42,10 @@
             "heading": "Consultant I | Mastek",
             "text": "Ahmedabad, India | July 2024 - Present",
             "bullets": [
-              "Built and deployed approximately 20-25 OIC integrations across Oracle Fusion HCM and Financials, owning assigned modules from technical design through testing, deployment and post-go-live support.",
-              "Delivered assigned integrations across three implementation projects from design through go-live, working within delivery teams of approximately 15-20 members.",
-              "Developed approximately 10-15 BI Publisher reports for incremental and comparison extracts consumed by integrations, as well as standalone business reporting.",
-              "Promoted and validated integrations across Development, Test, UAT and Production. Several runs processed about 5,000 records; the largest documented daily file contained about 10,000 records.",
+              "Built and deployed 20+ Oracle Integration Cloud integrations across Oracle Fusion HCM and Financials, owning assigned modules from technical design through testing, deployment and post-go-live support.",
+              "Delivered integrations on three Oracle Fusion implementation projects from design through go-live, working within delivery teams of 15-20.",
+              "Developed 10+ BI Publisher reports, used both as integration data sources (incremental and comparison extracts) and as standalone business reports.",
+              "Promoted and validated integrations across Development, Test, UAT and Production; routine runs processed ~5,000 records and the largest daily file ~10,000 records.",
               "Supported live OIC integrations for multiple client environments concurrently, investigating run logs and exception reports, identifying root causes, and coordinating correction and reprocessing.",
               "Provided Oracle ADF application support for a UK local-government client alongside OIC support work."
             ]
@@ -61,7 +62,7 @@
             "bullets": [
               "Built a retirement contribution integration that ingested pipe-delimited provider files over SFTP, staged and validated records in Oracle Database, and used PL/SQL with BI Publisher extracts to identify new and changed elections.",
               "Generated multi-level HDL files, submitted and monitored HCM loads, and mapped rejected records back to their source lines for exception reporting, notification and reprocessing.",
-              "Eliminated manual expense-report creation for a workflow covering about 300 employees by converting approved spend authorizations into Oracle Expenses reports using incremental BI Publisher extracts and nested REST payloads for headers, lines and attachments.",
+              "Eliminated manual expense-report creation for a workflow covering ~300 employees by converting approved spend authorizations into Oracle Expenses reports using incremental BI Publisher extracts and nested REST payloads for headers, lines and attachments.",
               "Delivered scheduled outbound integrations that sent Oracle Fusion reporting extracts to third-party SFTP locations."
             ]
           }
@@ -73,7 +74,7 @@
           {
             "bullets": [
               "General Ledger: Built FBDI journal imports, transforming source data, generating and uploading files, handling load errors, reconciling results and sending email notifications.",
-              "Suppliers: Updated external supplier ratings in Oracle Fusion descriptive flexfields (DFFs) through REST APIs; supplier processing on one project covered about 700 suppliers.",
+              "Suppliers: Updated external supplier ratings in Oracle Fusion descriptive flexfields (DFFs) through REST APIs; supplier processing on one project covered ~700 suppliers.",
               "Employee lifecycle: Built an event-driven integration covering hire, update, termination and rehire through Oracle Worker REST APIs, comparing source and Fusion data to apply only changed fields.",
               "Employee bank accounts: Built daily full-load synchronization that skipped unchanged records, created missing banks and branches, associated accounts and deactivated replaced accounts through HDL, eliminating manual account creation for the workflow.",
               "Approval auto-delegation: Built integrations that maintained approval routing during employee absence."

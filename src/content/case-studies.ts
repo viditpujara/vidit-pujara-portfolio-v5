@@ -45,7 +45,7 @@ export const caseStudies: CaseStudy[] = [
       "Oracle Fusion retirement contributions through SFTP, database staging, BI Publisher, PL/SQL and HDL, with rejected records mapped to source lines.",
     problem:
       "An external retirement benefits provider supplied employee contribution elections in a pipe delimited text file. The records had to be validated, matched to the correct employees in Oracle Fusion, and applied as either new elections or updates to existing ones. Records that failed inside Oracle Fusion had to be traced back to the original source line so the business could correct them.",
-    role: "Built as part of my assigned integration modules at Mastek, from technical design through deployment and post-go-live support. Designed and built the end to end integration, the supporting BI Publisher extract, the database comparison logic and the exception reporting.",
+    role: "Built as part of my assigned integration modules at Mastek, from technical design through deployment and post-go-live support. Built the end to end integration, the supporting BI Publisher extract, the database comparison logic and the exception reporting.",
     approach: [
       {
         index: "01",

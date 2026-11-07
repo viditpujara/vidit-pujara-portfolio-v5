@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
     "Download Vidit Pujara’s Oracle Fusion and OIC résumé: integration delivery, BI Publisher, production support and verified certifications.",
   path: "/resume",
   type: "profile",
-  keywords: ["Oracle ERP consultant resume", "OIC developer CV"],
+  keywords: ["Oracle Fusion consultant resume", "OIC developer CV"],
 });
 
 /** Print-friendly web résumé with a separately reviewed public PDF. */
