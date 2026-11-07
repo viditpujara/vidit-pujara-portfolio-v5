@@ -81,14 +81,16 @@ python3 -m venv /tmp/portfolio-pdf-env
 /tmp/portfolio-pdf-env/bin/python scripts/build-social-image.py
 ```
 
-The pinned `reportlab` needs Python 3.10 or newer. Generators use DejaVu fonts from
-`/usr/share/fonts/truetype/dejavu` (Debian/Ubuntu: `fonts-dejavu-core`). Where DejaVu
-lives elsewhere, for example on macOS, set `RESUME_FONT_DIR` to the directory holding
-`DejaVuSans.ttf` and `DejaVuSans-Bold.ttf`. The PDF builder writes an ignored `output/pdf/` copy and the
-public asset. Render every page with `pdftoppm` and inspect the final layout after
-edits; text checks alone cannot prove layout quality. Keep public PDF content and
-`src/content` facts aligned. Never copy a client-named or unreviewed source straight into
-`public/`.
+The pinned `reportlab` needs Python 3.10 or newer. The résumé follows the owner's
+LaTeX layout in Latin Modern type. `scripts/fonts/latin-modern/` holds the five
+unmodified Latin Modern OpenType files with their GUST Font License; because reportlab
+only reads TrueType outlines, `build-resume.py` converts them (with `fonttools`) into
+the ignored `output/fonts/` folder on first run. The PDF builder writes an ignored
+`output/pdf/` copy and the public asset. Render every page (for example with PyMuPDF
+or `pdftoppm`) and inspect the final layout after edits; text checks alone cannot prove
+layout quality. Keep public PDF content and `src/content` facts aligned. Never copy a
+client-named or unreviewed source straight into `public/`.
+`scripts/build-social-image.py` still uses the DejaVu fonts in `/usr/share/fonts/truetype/dejavu`.
 
 ## Architecture and content
 
