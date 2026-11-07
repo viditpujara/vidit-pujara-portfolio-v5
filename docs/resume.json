@@ -19,19 +19,22 @@
         "title": "SKILLS",
         "blocks": [
           {
-            "text": "Oracle Cloud: Oracle Integration Cloud (OIC), Oracle Fusion HCM, Oracle Fusion Financials, General Ledger and Expenses integrations, supplier data, BI Publisher (BIP), Oracle Database."
+            "text": "Oracle Cloud: Oracle Integration Cloud (OIC Gen 3), Oracle Fusion HCM, Oracle Fusion Financials, General Ledger and Expenses integrations, supplier data, BI Publisher (BIP), Oracle Database."
           },
           {
-            "text": "Integration and loading: REST APIs, SOAP web services, Worker and Expenses REST APIs, SFTP, XML, HCM Data Loader (HDL), File-Based Data Import (FBDI), scheduled, event-driven and file-based integrations, XSLT/XPath mapping, JSON, WSDL, OIC adapters, connections and lookups, ESS job submission, UCM."
+            "text": "Integration and loading: REST APIs, SOAP web services, Worker and Expenses REST APIs, SFTP, XML, HCM Data Loader (HDL), File-Based Data Import (FBDI), scheduled, event-driven and file-based integrations, XSLT/XPath mapping, JSON, WSDL, OIC adapters, connections and lookups, ESS job submission, UCM, OIC connectivity agent."
           },
           {
-            "text": "Data: Oracle SQL, PL/SQL stored procedures, staging tables, data mapping and transformation, incremental extraction, validation and source-to-Fusion reconciliation."
+            "text": "Data: Oracle SQL, PL/SQL stored procedures, staging tables, data mapping and transformation, data migration and conversion loads, incremental extraction, validation and source-to-Fusion reconciliation."
           },
           {
-            "text": "Delivery: Development/Test/UAT/Production promotion, UAT support, monitoring, failure investigation, exception reporting, error handling and reprocessing."
+            "text": "Delivery: Development/Test/UAT/Production promotion, UAT support, technical design and mapping documents, unit testing, collaboration with functional consultants, monitoring, failure investigation, exception reporting, error handling and reprocessing."
           },
           {
-            "text": "Also: Oracle APEX (certified), Oracle VBCS (working knowledge), Oracle ADF (application support), Postman, Java."
+            "text": "Also: Oracle APEX (certified), Oracle VBCS (working knowledge), Oracle ADF (application support), Postman, Java, ServiceNow, Git (ADF)."
+          },
+          {
+            "text": "Studied, no project delivery yet: OTBI, HCM Extracts, Fast Formula, HSDL."
           }
         ]
       },
@@ -44,6 +47,7 @@
             "bullets": [
               "Built and deployed 20+ Oracle Integration Cloud integrations across Oracle Fusion HCM and Financials, owning assigned modules from technical design through testing, deployment and post-go-live support.",
               "Delivered integrations on three Oracle Fusion implementation projects from design through go-live, working within delivery teams of 15-20.",
+              "Worked with functional consultants on integration requirements and field mappings.",
               "Developed 10+ BI Publisher reports, used both as integration data sources (incremental and comparison extracts) and as standalone business reports.",
               "Promoted and validated integrations across Development, Test, UAT and Production; routine runs processed ~5,000 records and the largest daily file ~10,000 records.",
               "Supported live OIC integrations for 2 to 3 client environments concurrently, depending on the client, investigating run logs and exception reports, identifying root causes, and coordinating correction and reprocessing.",
@@ -65,6 +69,14 @@
               "Eliminated manual expense-report creation for a workflow covering ~300 employees by converting approved spend authorizations into Oracle Expenses reports using incremental BI Publisher extracts and nested REST payloads for headers, lines and attachments.",
               "Delivered scheduled outbound integrations that sent Oracle Fusion reporting extracts to third-party SFTP locations."
             ]
+          },
+          {
+            "heading": "US Energy Infrastructure Client | Oracle Fusion HCM Integrations",
+            "bullets": [
+              "Built integrations between Oracle Fusion HCM and multiple different external source systems.",
+              "Employee lifecycle: Built an event-driven integration covering hire, update, termination and rehire through Oracle Worker REST APIs, comparing source and Fusion data to apply only changed fields.",
+              "Employee bank accounts: Built daily full-load synchronization that skipped unchanged records, created missing banks and branches, associated accounts and deactivated replaced accounts through HDL, eliminating manual account creation for the workflow."
+            ]
           }
         ]
       },
@@ -75,8 +87,6 @@
             "bullets": [
               "General Ledger: Built FBDI journal imports, transforming source data, generating and uploading files, handling load errors, reconciling results and sending email notifications.",
               "Suppliers: Updated external supplier ratings in Oracle Fusion descriptive flexfields (DFFs) through REST APIs; supplier processing on one project covered ~700 suppliers.",
-              "Employee lifecycle: Built an event-driven integration covering hire, update, termination and rehire through Oracle Worker REST APIs, comparing source and Fusion data to apply only changed fields.",
-              "Employee bank accounts: Built daily full-load synchronization that skipped unchanged records, created missing banks and branches, associated accounts and deactivated replaced accounts through HDL, eliminating manual account creation for the workflow.",
               "Approval auto-delegation: Built integrations that maintained approval routing during employee absence."
             ]
           }

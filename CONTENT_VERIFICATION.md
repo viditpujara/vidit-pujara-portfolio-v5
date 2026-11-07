@@ -20,8 +20,20 @@ Updated 7 November 2026 (first recorded 1 November). This supersedes the earlier
   and UCM. The owner is the source for these. The repository's own case studies
   directly support REST/SOAP and SFTP adapter work, nested JSON payloads, FBDI and HDL
   file loads and OIC mapping; they say nothing specific about lookups, WSDL or UCM, so
-  those rest on the owner's statement. OTBI, HCM Extracts, Fast Formula and HSDL were
-  not added: they were not requested and have no evidence here.
+  those rest on the owner's statement.
+- **Further owner statements, 7 November 2026:** OIC Generation 3; OIC connectivity
+  agent; data migration and conversion loads; technical design and mapping
+  documents and unit testing; collaboration with functional consultants "all the
+  time"; ServiceNow, and Git for ADF work. Not added: BICC (owner: no). OTBI, HCM
+  Extracts, Fast Formula and HSDL are listed only as "studied, no project delivery yet",
+  because the owner has learned them but not used them on a project.
+- **Second implementation project (US energy infrastructure client):** per the owner,
+  its work was integrations between Oracle Fusion HCM and multiple different external
+  source systems, plus the employee lifecycle and employee bank account synchronizations
+  (case studies 03 and 04). The PDF shows this under a project heading using the
+  descriptor from the owner's earlier résumé; the site says only "a second
+  implementation project". Integration and report counts for this project were not
+  supplied and are not claimed.
 - The career-direction text was made neutral on 7 November 2026 ("deeper solution
   design, VBCS extensions and AI enabled automation"); it is still a direction, not a title.
 - Credentials retain the previously recorded issuer links; no new live issuer
@@ -29,8 +41,9 @@ Updated 7 November 2026 (first recorded 1 November). This supersedes the earlier
 - The downloadable résumé was regenerated from the supplied reviewed PDF with
   Consultant I, certifications, generic client descriptions and no phone. Its
   editable content is `docs/resume.json`; the original Downloads file is unchanged.
-- The generic second implementation-project block was omitted rather than padded
-  with invented detail. The three-implementation record remains.
+- The earlier generic second implementation-project bullet was replaced on 7 November
+  2026 by the owner-supplied description above, not by invented detail. The
+  three-implementation record remains.
 - Sherbimet's contradictory prepared-query claim was corrected. TripTogether's
   frontend routing no longer implies verified database authorization.
 

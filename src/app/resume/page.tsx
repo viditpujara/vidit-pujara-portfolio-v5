@@ -199,7 +199,9 @@ export default function ResumePage() {
               <div key={band.index} className="mb-3">
                 <p className="t-key text-record-muted">{band.title}</p>
                 <p className="t-small mt-1">
-                  {band.groups.flatMap((group) => group.items).join(", ")}
+                  {band.groups
+                    .map((group) => `${group.title}: ${group.items.join(", ")}`)
+                    .join(". ")}
                 </p>
               </div>
             ))}

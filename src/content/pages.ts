@@ -196,6 +196,7 @@ export const experience = {
       title: "Delivery context",
       points: [
         "Contributed to three implementation projects from start to finish.",
+        "Worked with functional consultants on integration requirements and field mappings.",
         "Worked within delivery teams of approximately 15 to 20 members.",
       ],
     },
@@ -213,6 +214,10 @@ export const experience = {
   additionalIntro:
     "Work delivered alongside the case studies above, summarised rather than written up individually.",
   additional: [
+    {
+      title: "External source system integrations",
+      body: "On a second implementation project, built integrations between Oracle Fusion HCM and multiple different external source systems, including the employee lifecycle and employee bank account synchronizations written up as case studies.",
+    },
     {
       title: "Outbound reporting integrations",
       body: "Generated reporting extracts from Oracle Fusion and delivered the resulting files to third party SFTP locations on an agreed schedule.",
@@ -260,7 +265,7 @@ export const skills = {
         {
           title: "Oracle integration and ERP",
           items: [
-            "Oracle Integration Cloud",
+            "Oracle Integration Cloud (Gen 3)",
             "Oracle Fusion HCM",
             "Oracle Fusion Financials",
             "BI Publisher",
@@ -275,12 +280,20 @@ export const skills = {
             "OIC adapters, connections and lookups",
             "ESS job submission",
             "UCM",
+            "OIC connectivity agent",
             "Technical architecture",
           ],
         },
         {
           title: "Data",
-          items: ["Oracle SQL", "PL/SQL", "Oracle Database", "SQL", "MySQL"],
+          items: [
+            "Oracle SQL",
+            "PL/SQL",
+            "Oracle Database",
+            "SQL",
+            "MySQL",
+            "Data migration and conversion loads",
+          ],
         },
         {
           title: "Engineering",
@@ -295,6 +308,15 @@ export const skills = {
             "Postman",
           ],
         },
+        {
+          title: "Delivery practice",
+          items: [
+            "Technical design and mapping documents",
+            "Unit testing",
+            "Collaboration with functional consultants",
+            "ServiceNow",
+          ],
+        },
       ],
     },
     {
@@ -306,7 +328,16 @@ export const skills = {
       groups: [
         {
           title: "Oracle platform",
-          items: ["Oracle VBCS (working knowledge)", "Oracle ADF (application support)", "Oracle Core Java"],
+          items: [
+            "Oracle VBCS (working knowledge)",
+            "Oracle ADF (application support)",
+            "Oracle Core Java",
+            "Git (ADF work)",
+          ],
+        },
+        {
+          title: "Studied, no project delivery yet",
+          items: ["OTBI", "HCM Extracts", "Fast Formula", "HSDL"],
         },
       ],
     },
@@ -323,7 +354,6 @@ export const skills = {
             "Oracle AI Foundations",
             "Oracle Vector AI",
             "Oracle Cloud Infrastructure",
-            "HCM data migration",
           ],
         },
         {
@@ -513,13 +543,22 @@ export const resume = {
     {
       label: "Oracle integration and ERP",
       value:
-        "Oracle Integration Cloud, Oracle Fusion HCM, Oracle Fusion Financials, BI Publisher, HDL, FBDI, REST APIs, SOAP services, SFTP, XSLT/XPath mapping, JSON, WSDL, OIC adapters, connections and lookups, ESS job submission, UCM, Technical architecture",
+        "Oracle Integration Cloud (Gen 3), Oracle Fusion HCM, Oracle Fusion Financials, BI Publisher, HDL, FBDI, REST APIs, SOAP services, SFTP, XSLT/XPath mapping, JSON, WSDL, OIC adapters, connections and lookups, ESS job submission, UCM, OIC connectivity agent, Technical architecture",
     },
-    { label: "Data", value: "Oracle SQL, PL/SQL, Oracle Database, SQL, MySQL" },
+    {
+      label: "Data",
+      value:
+        "Oracle SQL, PL/SQL, Oracle Database, SQL, MySQL, Data migration and conversion loads",
+    },
     {
       label: "Engineering",
       value:
         "Java, Java full stack, Python, JavaScript, HTML, CSS, Bootstrap, Postman",
+    },
+    {
+      label: "Delivery practice",
+      value:
+        "Technical design and mapping documents, Unit testing, Collaboration with functional consultants, ServiceNow",
     },
   ],
   printNote:

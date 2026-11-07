@@ -12,7 +12,9 @@ text = re.sub(r'\s+', ' ', ' '.join(page.extract_text() for page in reader.pages
 for required in ['Consultant I | Mastek','CERTIFICATIONS','Oracle APEX','2 to 3 client environments','Oracle ADF',
                  '20+ inbound and outbound integrations','10+ BI Publisher reports',
                  'Oracle APEX Cloud Certified Developer Professional.','Also: Oracle APEX (certified)',
-                 'XSLT/XPath mapping','OIC adapters, connections and lookups','ESS job submission']:
+                 'XSLT/XPath mapping','OIC adapters, connections and lookups','ESS job submission',
+                 'OIC Gen 3','OIC connectivity agent','ServiceNow','Studied, no project delivery yet',
+                 'US Energy Infrastructure Client | Oracle Fusion HCM Integrations']:
     assert required in text, f'Missing reviewed content: {required}'
 assert not re.search(r'\+91|tel:|Oracle ERP Technical Consultant|two additional', text, re.I), 'Stale/private copy present'
 allowed = {'mailto:vidit.pujara@zohomail.in','https://viditpujara.me','https://www.linkedin.com/in/viditpujara'}
