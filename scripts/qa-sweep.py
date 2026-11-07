@@ -7,6 +7,7 @@ import re
 import subprocess
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
@@ -91,6 +92,24 @@ def check_sitemap(text, origin, routes=ROUTES):
         return ['sitemap must contain every expected canonical URL exactly once']
     return []
 
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *args, **kwargs):
+        return None
+
+def check_legacy_redirects(base, origin):
+    """Old version hosts must 308 to the canonical origin with the same path (local builds only)."""
+    errors = []
+    opener = urllib.request.build_opener(_NoRedirect)
+    for host in [f'{prefix}.viditpujara.me' for prefix in ('v1', 'v2', 'v3', 'v4', 'v5', 'www')]:
+        for route in ['/'] + [r for r in ROUTES if r.startswith('/case-studies/')][:1]:
+            request = urllib.request.Request(base.rstrip('/') + route, headers={'Host': host})
+            try: response = opener.open(request, timeout=30)
+            except urllib.error.HTTPError as error: response = error
+            expected = origin + (route if route != '/' else '/')
+            if response.status != 308 or response.headers.get('location', '').rstrip('/') != expected.rstrip('/'):
+                errors.append(f'{host}{route}: expected 308 to {expected}, got {response.status} {response.headers.get("location")}')
+    return errors
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('base', nargs='?', default='http://127.0.0.1:3100')
@@ -108,6 +127,8 @@ def main():
         status, body, headers = get(route)
         errors.extend([f'{route}: status {status}'] if status != 200 else
                       [f'{route}: {e}' for e in check_page(body.decode(), headers, route, origin, args.environment, private)])
+    if urllib.parse.urlparse(args.base).hostname in ('127.0.0.1', 'localhost'):
+        errors.extend(check_legacy_redirects(args.base, origin))
     status, _, _ = get('/this-route-does-not-exist')
     if status != 404: errors.append('unknown route must return 404')
     for path, checker in [('/robots.txt', lambda t: check_robots(t, origin, args.environment)),

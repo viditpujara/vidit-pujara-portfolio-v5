@@ -52,6 +52,7 @@ class ReleaseRegressions(unittest.TestCase):
             return SimpleNamespace(status=200 if path in bodies else 404,
                                    read=lambda: body.encode(), headers={**headers, 'content-type':'application/pdf'})
         with patch.object(qa, 'ROUTES', ['/']), patch.object(qa, 'check_sitemap', return_value=[]), \
+             patch.object(qa, 'check_legacy_redirects', return_value=[]), \
              patch.object(qa.urllib.request, 'urlopen', side_effect=response), \
              patch.object(qa.subprocess, 'run', return_value=SimpleNamespace(returncode=1)), \
              patch('sys.argv', ['qa', '--origin', origin, '--environment', 'production']), \

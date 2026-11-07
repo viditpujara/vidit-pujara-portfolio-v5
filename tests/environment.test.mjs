@@ -40,3 +40,19 @@ test("résumé facts match the confirmed identity and avoid stale support counts
   assert.match(resume, /CERTIFICATIONS/);
   assert.doesNotMatch(resume, /tel:|\+91|two additional/i);
 });
+test("old version hosts and www redirect to the canonical origin, keeping the path", async () => {
+  const { default: config } = await import("../next.config.ts");
+  const { canonicalOrigin } = await import("../src/lib/environment.ts");
+  const rules = await config.redirects();
+  const matches = (rule, host) =>
+    rule.has?.some((item) => item.type === "host" && new RegExp(`^${item.value}$`).test(host));
+  for (const prefix of ["v1", "v2", "v3", "v4", "v5", "www"]) {
+    const rule = rules.find((candidate) => matches(candidate, `${prefix}.viditpujara.me`));
+    assert.ok(rule, `${prefix} has no redirect`);
+    assert.equal(rule.source, "/:path*");
+    assert.equal(rule.destination, `${canonicalOrigin}/:path*`);
+    assert.equal(rule.permanent, true);
+  }
+  assert.ok(!rules.some((rule) => matches(rule, "viditpujara.me")), "the canonical host must not redirect");
+  assert.ok(rules.some((rule) => rule.source === "/case-study/:slug" && rule.destination === "/case-studies/:slug"));
+});
