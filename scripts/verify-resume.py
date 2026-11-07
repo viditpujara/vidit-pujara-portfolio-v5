@@ -8,8 +8,13 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 reader = PdfReader(ROOT/'public/vidit-pujara-oracle-fusion-technical-consultant-resume.pdf')
 assert len(reader.pages) == 2, 'Expected two complete pages'
-text = '\n'.join(page.extract_text() for page in reader.pages)
-for required in ['Consultant I | Mastek','CERTIFICATIONS','Oracle APEX','multiple client environments','Oracle ADF']:
+text = re.sub(r'\s+', ' ', ' '.join(page.extract_text() for page in reader.pages))
+for required in ['Consultant I | Mastek','CERTIFICATIONS','Oracle APEX','2 to 3 client environments','Oracle ADF',
+                 '20+ inbound and outbound integrations','10+ BI Publisher reports',
+                 'Oracle APEX Cloud Certified Developer Professional.','Also: Oracle APEX (certified)',
+                 'XSLT/XPath mapping','OIC adapters, connections and lookups','ESS job submission',
+                 'OIC Gen 3','OIC connectivity agent','ServiceNow','Studied, no project delivery yet',
+                 'US Energy Infrastructure Client | Oracle Fusion HCM Integrations']:
     assert required in text, f'Missing reviewed content: {required}'
 assert not re.search(r'\+91|tel:|Oracle ERP Technical Consultant|two additional', text, re.I), 'Stale/private copy present'
 allowed = {'mailto:vidit.pujara@zohomail.in','https://viditpujara.me','https://www.linkedin.com/in/viditpujara'}
@@ -22,6 +27,7 @@ for page in reader.pages:
             uris.append(str(action.get('/URI')))
 assert set(uris) == allowed, 'Unexpected or missing URL annotations'
 assert reader.metadata.title == 'Vidit Pujara - Oracle Fusion Technical Consultant (OIC)'
+assert 'Oracle Integration Cloud' in (reader.metadata.get('/Keywords') or ''), 'Missing PDF keywords metadata'
 assert not reader.is_encrypted
 assert not reader.get_fields()
 terms = ROOT/'.qa-private.json'

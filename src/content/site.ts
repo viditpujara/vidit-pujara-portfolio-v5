@@ -24,7 +24,7 @@ export const identity = {
   monogram: "VP",
   siteName: "Vidit Pujara, Oracle Fusion Technical Consultant",
   positioning:
-    "Oracle Fusion Technical Consultant specialising in Oracle Integration Cloud, with experience delivering enterprise integrations across Oracle Fusion HCM and Financials and a developing focus on AI enabled integration architecture.",
+    "Oracle Fusion Technical Consultant at Mastek building Oracle Integration Cloud integrations and BI Publisher reports for Oracle Fusion HCM and Financials.",
   footerLine:
     "Oracle Fusion Technical Consultant working on Oracle Integration Cloud, Oracle Fusion HCM and Oracle Fusion Financials.",
   confidentialityLine:

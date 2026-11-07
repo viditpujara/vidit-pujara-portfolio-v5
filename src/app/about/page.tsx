@@ -22,7 +22,7 @@ export const metadata: Metadata = pageMetadata({
     "Oracle Fusion Technical Consultant in Ahmedabad. Consultant I at Mastek, specialising in OIC integrations, validation and reconciliation.",
   path: "/about",
   type: "profile",
-  keywords: ["Oracle ERP consultant profile", "OIC developer background"],
+  keywords: ["Oracle Fusion consultant profile", "OIC developer background"],
 });
 
 export default function AboutPage() {

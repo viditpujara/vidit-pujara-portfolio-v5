@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build the reviewed public résumé from docs/resume.json (reportlab required)."""
 import json
+import os
 import shutil
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -15,7 +16,8 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak, 
 
 ROOT = Path(__file__).resolve().parents[1]
 data = json.loads((ROOT / "docs/resume.json").read_text())
-font_dir = Path("/usr/share/fonts/truetype/dejavu")
+# Override with RESUME_FONT_DIR where DejaVu lives elsewhere (for example macOS).
+font_dir = Path(os.environ.get("RESUME_FONT_DIR", "/usr/share/fonts/truetype/dejavu"))
 for name, file in [("Body", "DejaVuSans.ttf"), ("Bold", "DejaVuSans-Bold.ttf")]:
     pdfmetrics.registerFont(TTFont(name, str(font_dir / file)))
 pdfmetrics.registerFontFamily("Body", normal="Body", bold="Bold")
@@ -43,7 +45,8 @@ output = ROOT / "output/pdf/Vidit_Pujara_Oracle_Fusion_Technical_Consultant_OIC.
 output.parent.mkdir(parents=True, exist_ok=True)
 doc = SimpleDocTemplate(str(output), pagesize=A4, rightMargin=43, leftMargin=43,
                         topMargin=34, bottomMargin=42,
-                        title=data["metadataTitle"], author=data["name"])
+                        title=data["metadataTitle"], author=data["name"],
+                        keywords=data.get("keywords", ""))
 story = [paragraph(data["name"], "name"), paragraph(data["title"], "title"),
          paragraph(data["tagline"], "contact"), paragraph(data["contact"], "contact"),
          Paragraph('<link href="mailto:vidit.pujara@zohomail.in">vidit.pujara@zohomail.in</link> | '

@@ -402,13 +402,13 @@ export const figCareerDirection = {
       index: "03",
       heading: "Direction",
       period: "By 2028",
-      body: "Move toward AI Integration Architecture: applying vector search, language models and Oracle AI services to enterprise integration problems. This is a stated direction supported by study in progress, not a current job title.",
+      body: "Deeper solution design across Oracle Fusion integrations, VBCS extensions and AI enabled automation, applying vector search, language models and Oracle AI services to enterprise integration problems. This is a direction supported by study in progress, not a current job title.",
       isDirection: true,
     },
   ],
   alt: [
     "Now, 2024 to 2026: deepen Oracle Integration Cloud delivery across Oracle Fusion HCM and Financials.",
     "Next, 2026 to 2027: extend into Oracle VBCS, Oracle Cloud Infrastructure and solution level integration design.",
-    "Direction, by 2028: move toward AI Integration Architecture. This is a career direction, not a current title.",
+    "Direction, by 2028: deeper solution design and AI enabled automation. This is a career direction, not a current title.",
   ],
 };
