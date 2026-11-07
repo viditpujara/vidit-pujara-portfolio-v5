@@ -23,7 +23,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/contact",
   keywords: [
     "hire Oracle Integration Cloud consultant",
-    "Oracle ERP technical consultant Ahmedabad",
+    "Oracle Fusion technical consultant Ahmedabad",
   ],
 });
 

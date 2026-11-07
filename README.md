@@ -81,8 +81,10 @@ python3 -m venv /tmp/portfolio-pdf-env
 /tmp/portfolio-pdf-env/bin/python scripts/build-social-image.py
 ```
 
-Generators use DejaVu fonts from `/usr/share/fonts/truetype/dejavu` (Debian/Ubuntu:
-`fonts-dejavu-core`). The PDF builder writes an ignored `output/pdf/` copy and the
+The pinned `reportlab` needs Python 3.10 or newer. Generators use DejaVu fonts from
+`/usr/share/fonts/truetype/dejavu` (Debian/Ubuntu: `fonts-dejavu-core`). Where DejaVu
+lives elsewhere, for example on macOS, set `RESUME_FONT_DIR` to the directory holding
+`DejaVuSans.ttf` and `DejaVuSans-Bold.ttf`. The PDF builder writes an ignored `output/pdf/` copy and the
 public asset. Render every page with `pdftoppm` and inspect the final layout after
 edits; text checks alone cannot prove layout quality. Keep public PDF content and
 `src/content` facts aligned. Never copy a phone/client-named source straight into

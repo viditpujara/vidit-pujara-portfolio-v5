@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
     "Download Vidit Pujara’s Oracle Fusion and OIC résumé: integration delivery, BI Publisher, production support and verified certifications.",
   path: "/resume",
   type: "profile",
-  keywords: ["Oracle ERP consultant resume", "OIC developer CV"],
+  keywords: ["Oracle Fusion consultant resume", "OIC developer CV"],
 });
 
 /** Print-friendly web résumé with a separately reviewed public PDF. */
@@ -199,7 +199,9 @@ export default function ResumePage() {
               <div key={band.index} className="mb-3">
                 <p className="t-key text-record-muted">{band.title}</p>
                 <p className="t-small mt-1">
-                  {band.groups.flatMap((group) => group.items).join(", ")}
+                  {band.groups
+                    .map((group) => `${group.title}: ${group.items.join(", ")}`)
+                    .join(". ")}
                 </p>
               </div>
             ))}

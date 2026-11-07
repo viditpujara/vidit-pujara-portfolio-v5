@@ -5,9 +5,9 @@ export const home = {
   name: "Vidit Pujara",
   title: identity.publicTitle,
   positioning:
-    "I design and deliver Oracle Fusion HCM and Financials integrations using Oracle Integration Cloud, BI Publisher, REST APIs, SOAP services, HDL, FBDI, Oracle SQL and established enterprise integration patterns.",
+    "I build Oracle Integration Cloud integrations and BI Publisher reports for Oracle Fusion HCM and Financials, using REST and SOAP services, HDL, FBDI and Oracle SQL, with validation and reconciliation built into every run.",
   direction:
-    "I am expanding this enterprise integration foundation through product engineering, Oracle VBCS, and AI enabled integration architecture.",
+    "I am expanding this enterprise integration foundation through deeper solution design, Oracle VBCS extensions and AI enabled automation.",
   experienceLabel: `${identity.officialDesignation} at ${identity.employer}, since July 2024`,
   deliveryRecordHeading: "Delivery record",
   positioningEyebrow: "Positioning",
@@ -68,19 +68,19 @@ export const home = {
     "First full time role after graduation. Assigned integration modules across Oracle Fusion HCM and Oracle Fusion Financials, working from design through post go live support under the mentorship of technical leads.",
   experiencePoints: [
     "Three implementation projects delivered from start to finish",
-    "Concurrent OIC production support across multiple client environments",
+    "Concurrent OIC production support across 2 to 3 client environments, depending on the client",
     "Oracle ADF application support alongside OIC delivery",
     "Work promoted across Development, Test, UAT and Production",
     "Delivery teams of approximately 15 to 20 members",
   ],
   directionEyebrow: "Direction",
-  directionHeading: "Toward AI integration architecture by 2028",
+  directionHeading: "Next: deeper solution design and AI enabled automation",
   directionIntro:
     "The near term focus stays on Oracle Integration Cloud delivery. The longer term direction builds on that foundation rather than replacing it.",
   credentialsEyebrow: "Credentials",
   credentialsHeading: "Selected certifications",
   contactEyebrow: "Contact",
-  contactHeading: "Open to Oracle ERP and Oracle Integration Cloud roles",
+  contactHeading: "Open to Oracle Fusion and Oracle Integration Cloud roles",
   contactBody:
     "Email is the fastest route. Case study detail beyond what is published here can be discussed within the limits of client confidentiality.",
 };
@@ -117,7 +117,7 @@ export const about = {
     {
       index: "04",
       title: "What enterprise integration turned out to be",
-      body: "Around twenty to twenty five integrations later, the pattern is consistent. Read from a source that will not always behave, stage it so a run can be inspected, compare it against what Oracle Fusion already holds, apply only what changed, then map every error back to the record that caused it.",
+      body: "Twenty or more integrations later, the pattern is consistent. Read from a source that will not always behave, stage it so a run can be inspected, compare it against what Oracle Fusion already holds, apply only what changed, then map every error back to the record that caused it.",
     },
     {
       index: "05",
@@ -132,7 +132,7 @@ export const about = {
     {
       index: "07",
       title: "Where this is heading",
-      body: "The direction is AI Integration Architecture by 2028. Concretely that means Oracle AI Foundations, vector search and language models applied to integration problems, built on top of the OIC foundation rather than instead of it. It is a stated direction supported by study in progress, not a current title.",
+      body: "Next is deeper solution design across Oracle Fusion integrations, Oracle VBCS extensions and AI enabled automation. Concretely that means Oracle AI Foundations, vector search and language models applied to integration problems, built on top of the OIC foundation rather than instead of it. It is a direction supported by study in progress, not a current title.",
     },
   ],
   principlesHeading: "How the work is described here",
@@ -167,7 +167,7 @@ export const experience = {
     {
       title: "Integration delivery",
       points: [
-        "Designed, developed, tested and deployed Oracle integrations using Oracle Integration Cloud.",
+        "Built, tested and deployed Oracle integrations using Oracle Integration Cloud.",
         "Owned assigned integration modules through the full delivery cycle.",
         "Built scheduled integrations and event driven integrations.",
         "Built REST API integrations and worked with SOAP services.",
@@ -188,7 +188,7 @@ export const experience = {
       title: "Environments and support",
       points: [
         "Promoted and validated work across Development, Test, UAT and Production.",
-        "Supported live OIC integrations for multiple client environments concurrently, investigating run logs and exception reports, identifying root causes, and coordinating correction and reprocessing.",
+        "Supported live OIC integrations for 2 to 3 client environments concurrently, depending on the client, investigating run logs and exception reports, identifying root causes, and coordinating correction and reprocessing.",
         "Provided Oracle ADF application support for a UK local-government client alongside OIC support work.",
       ],
     },
@@ -196,7 +196,7 @@ export const experience = {
       title: "Delivery context",
       points: [
         "Contributed to three implementation projects from start to finish.",
-        "Supported multiple client environments concurrently.",
+        "Worked with functional consultants on integration requirements and field mappings.",
         "Worked within delivery teams of approximately 15 to 20 members.",
       ],
     },
@@ -214,6 +214,10 @@ export const experience = {
   additionalIntro:
     "Work delivered alongside the case studies above, summarised rather than written up individually.",
   additional: [
+    {
+      title: "External source system integrations",
+      body: "On a second implementation project, built integrations between Oracle Fusion HCM and multiple different external source systems, including the employee lifecycle and employee bank account synchronizations written up as case studies.",
+    },
     {
       title: "Outbound reporting integrations",
       body: "Generated reporting extracts from Oracle Fusion and delivered the resulting files to third party SFTP locations on an agreed schedule.",
@@ -261,7 +265,7 @@ export const skills = {
         {
           title: "Oracle integration and ERP",
           items: [
-            "Oracle Integration Cloud",
+            "Oracle Integration Cloud (Gen 3)",
             "Oracle Fusion HCM",
             "Oracle Fusion Financials",
             "BI Publisher",
@@ -270,12 +274,26 @@ export const skills = {
             "REST APIs",
             "SOAP services",
             "SFTP",
+            "XSLT/XPath mapping",
+            "JSON",
+            "WSDL",
+            "OIC adapters, connections and lookups",
+            "ESS job submission",
+            "UCM",
+            "OIC connectivity agent",
             "Technical architecture",
           ],
         },
         {
           title: "Data",
-          items: ["Oracle SQL", "PL/SQL", "Oracle Database", "SQL", "MySQL"],
+          items: [
+            "Oracle SQL",
+            "PL/SQL",
+            "Oracle Database",
+            "SQL",
+            "MySQL",
+            "Data migration and conversion loads",
+          ],
         },
         {
           title: "Engineering",
@@ -290,6 +308,15 @@ export const skills = {
             "Postman",
           ],
         },
+        {
+          title: "Delivery practice",
+          items: [
+            "Technical design and mapping documents",
+            "Unit testing",
+            "Collaboration with functional consultants",
+            "ServiceNow",
+          ],
+        },
       ],
     },
     {
@@ -301,7 +328,16 @@ export const skills = {
       groups: [
         {
           title: "Oracle platform",
-          items: ["Oracle VBCS (working knowledge)", "Oracle ADF (application support)", "Oracle Core Java"],
+          items: [
+            "Oracle VBCS (working knowledge)",
+            "Oracle ADF (application support)",
+            "Oracle Core Java",
+            "Git (ADF work)",
+          ],
+        },
+        {
+          title: "Studied, no project delivery yet",
+          items: ["OTBI", "HCM Extracts", "Fast Formula", "HSDL"],
         },
       ],
     },
@@ -309,7 +345,7 @@ export const skills = {
       index: "03",
       title: "Exploring and developing",
       intro:
-        "Active study supporting the direction toward AI enabled integration architecture. Listed as learning in progress, not as delivery experience.",
+        "Active study supporting a move toward AI enabled automation and deeper solution design. Listed as learning in progress, not as delivery experience.",
       emphasis: "tertiary",
       groups: [
         {
@@ -318,7 +354,6 @@ export const skills = {
             "Oracle AI Foundations",
             "Oracle Vector AI",
             "Oracle Cloud Infrastructure",
-            "HCM data migration",
           ],
         },
         {
@@ -471,7 +506,7 @@ export const credentials = {
 export const contact = {
   eyebrow: "Contact",
   title: "Get in touch",
-  intro: "Open to Oracle ERP and Oracle Integration Cloud roles",
+  intro: "Open to Oracle Fusion and Oracle Integration Cloud roles",
   channels: [
     {
       label: "Email",
@@ -501,20 +536,29 @@ export const contact = {
 
 export const resume = {
   summary:
-    "Oracle Fusion Technical Consultant specialising in Oracle Integration Cloud, with experience delivering enterprise integrations across Oracle Fusion HCM and Oracle Fusion Financials, and a developing focus on AI enabled integration architecture. Around twenty to twenty five integrations designed, built, tested and deployed across Development, Test, UAT and Production, supported by BI Publisher reporting, HDL and FBDI loading, REST and SOAP interfaces, SFTP file handling and database driven processing.",
+    "Oracle Fusion Technical Consultant with 2+ years at Mastek building Oracle Integration Cloud (OIC) integrations for Oracle Fusion HCM and Financials. 20+ integrations built, tested and deployed across Development, Test, UAT and Production, supported by BI Publisher reporting, HDL and FBDI loading, REST and SOAP interfaces, SFTP file handling and database driven processing, including mapping Oracle load errors back to source records for correction and reprocessing. Oracle APEX Cloud Certified Developer Professional.",
   metricsNote:
     "Manual expense report creation and manual employee bank account creation were each eliminated for one automated workflow. Figures are approximate where counted rather than measured.",
   coreSkills: [
     {
       label: "Oracle integration and ERP",
       value:
-        "Oracle Integration Cloud, Oracle Fusion HCM, Oracle Fusion Financials, BI Publisher, HDL, FBDI, REST APIs, SOAP services, SFTP, Technical architecture",
+        "Oracle Integration Cloud (Gen 3), Oracle Fusion HCM, Oracle Fusion Financials, BI Publisher, HDL, FBDI, REST APIs, SOAP services, SFTP, XSLT/XPath mapping, JSON, WSDL, OIC adapters, connections and lookups, ESS job submission, UCM, OIC connectivity agent, Technical architecture",
     },
-    { label: "Data", value: "Oracle SQL, PL/SQL, Oracle Database, SQL, MySQL" },
+    {
+      label: "Data",
+      value:
+        "Oracle SQL, PL/SQL, Oracle Database, SQL, MySQL, Data migration and conversion loads",
+    },
     {
       label: "Engineering",
       value:
         "Java, Java full stack, Python, JavaScript, HTML, CSS, Bootstrap, Postman",
+    },
+    {
+      label: "Delivery practice",
+      value:
+        "Technical design and mapping documents, Unit testing, Collaboration with functional consultants, ServiceNow",
     },
   ],
   printNote:

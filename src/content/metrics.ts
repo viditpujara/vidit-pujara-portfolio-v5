@@ -6,18 +6,19 @@ export type DeliveryMetric = {
 
 /**
  * Every figure here is taken from the verified delivery record.
- * Ranges are published as ranges. Nothing is rounded up into a single total.
+ * Counts are published as lower bounds ("20+"), ranges as ranges. Nothing is
+ * rounded up into a single total.
  */
 export const deliveryMetrics: DeliveryMetric[] = [
   {
-    value: "20 to 25",
-    label: "Oracle integrations designed, built and deployed",
-    note: "Approximate count across Oracle Fusion HCM and Financials",
+    value: "20+",
+    label: "Oracle integrations built and deployed",
+    note: "At least 20, across Oracle Fusion HCM and Financials",
   },
   {
-    value: "10 to 15",
+    value: "10+",
     label: "BI Publisher reports developed",
-    note: "Supporting integrations and standalone reporting",
+    note: "At least 10, supporting integrations and standalone reporting",
   },
   {
     value: "5,000",
@@ -53,12 +54,12 @@ export const deliveryMetrics: DeliveryMetric[] = [
 
 export const homeMetrics: DeliveryMetric[] = [
   {
-    value: "20 to 25",
+    value: "20+",
     label: "Oracle integrations built",
     note: "Across Oracle Fusion HCM and Financials",
   },
   {
-    value: "10 to 15",
+    value: "10+",
     label: "BI Publisher reports developed",
     note: "Supporting integrations and standalone reporting",
   },
@@ -84,20 +85,20 @@ export const eliminationNotes = [
   "Manual employee bank account creation was eliminated for one automated workflow.",
 ];
 
-/* Graph 01: delivery scope, shown as ranges. */
+/* Graph 01: delivery scope, shown as lower bounds. */
 export const graphDeliveryScope = {
   id: "graph-delivery-scope",
   title: "Delivery scope",
   caption:
-    "Both figures are approximate ranges rather than exact totals, so the full range is shown.",
+    "Both figures are lower bounds rather than exact totals.",
   axisMax: 30,
   unit: "items",
   rows: [
-    { label: "Oracle integrations", min: 20, max: 25, display: "20 to 25" },
-    { label: "BI Publisher reports", min: 10, max: 15, display: "10 to 15" },
+    { label: "Oracle integrations", value: 20, display: "20+" },
+    { label: "BI Publisher reports", value: 10, display: "10+" },
   ],
   summary:
-    "Approximately 20 to 25 Oracle integrations were designed, built and deployed, and approximately 10 to 15 BI Publisher reports were developed. Both values are ranges, not exact totals.",
+    "At least 20 Oracle integrations were built and deployed, and at least 10 BI Publisher reports were developed. Both values are lower bounds, not exact totals.",
 };
 
 /* Graph 02: documented processing volume. */
@@ -129,14 +130,14 @@ export const graphCoverage = {
   id: "graph-coverage",
   title: "Implementation coverage",
   caption:
-    "Implementation projects were delivered from design through go live. OIC production support spans multiple client environments; no numeric support count is claimed.",
+    "Implementation projects were delivered from design through go live. OIC production support covers two to three client environments at a time, depending on the client.",
   axisMax: 4,
   unit: "projects",
   rows: [
     { label: "End to end implementation projects", value: 3, display: "3" },
   ],
   summary:
-    "Three implementation projects included assigned integrations from design through go live. Multiple client environments received concurrent OIC production support, alongside Oracle ADF application support.",
+    "Three implementation projects included assigned integrations from design through go live. Two to three client environments at a time, depending on the client, received concurrent OIC production support, alongside Oracle ADF application support.",
 };
 
 /* Graph 04: selected project populations. */

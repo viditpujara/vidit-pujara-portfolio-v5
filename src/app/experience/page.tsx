@@ -180,7 +180,7 @@ export default function ExperiencePage() {
             index="03"
             eyebrow="Evidence"
             title="The same figures, drawn"
-            intro="Ranges are drawn as a span between their two ends rather than as a bar to the upper bound, because a solid bar to the top of a range reads as a measured total."
+            intro="Each bar is drawn to the stated value. Counts marked with a plus sign are lower bounds, and approximate volumes are labelled as approximate, so no bar reads as a measured total."
             register="record"
             wide
           />
