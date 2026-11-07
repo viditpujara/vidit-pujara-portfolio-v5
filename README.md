@@ -3,6 +3,11 @@
 Oracle Fusion Technical Consultant specialising in Oracle Integration Cloud (OIC).
 The formal Mastek designation is **Consultant I**, confirmed 1 November 2026.
 
+## Working on this repository
+
+Coding agents and contributors follow the rules in [AGENTS.md](AGENTS.md). Task history,
+decisions and requirements are indexed in [docs/README.md](docs/README.md).
+
 ## Run and verify
 
 Use Node 24 LTS (minimum 22.14) and the committed lockfile:
