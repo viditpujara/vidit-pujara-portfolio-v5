@@ -22,7 +22,7 @@
             "text": "Oracle Cloud: Oracle Integration Cloud (OIC), Oracle Fusion HCM, Oracle Fusion Financials, General Ledger and Expenses integrations, supplier data, BI Publisher (BIP), Oracle Database."
           },
           {
-            "text": "Integration and loading: REST APIs, SOAP web services, Worker and Expenses REST APIs, SFTP, XML, HCM Data Loader (HDL), File-Based Data Import (FBDI), scheduled, event-driven and file-based integrations."
+            "text": "Integration and loading: REST APIs, SOAP web services, Worker and Expenses REST APIs, SFTP, XML, HCM Data Loader (HDL), File-Based Data Import (FBDI), scheduled, event-driven and file-based integrations, XSLT/XPath mapping, JSON, WSDL, OIC adapters, connections and lookups, ESS job submission, UCM."
           },
           {
             "text": "Data: Oracle SQL, PL/SQL stored procedures, staging tables, data mapping and transformation, incremental extraction, validation and source-to-Fusion reconciliation."

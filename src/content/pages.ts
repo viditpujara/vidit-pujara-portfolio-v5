@@ -269,6 +269,12 @@ export const skills = {
             "REST APIs",
             "SOAP services",
             "SFTP",
+            "XSLT/XPath mapping",
+            "JSON",
+            "WSDL",
+            "OIC adapters, connections and lookups",
+            "ESS job submission",
+            "UCM",
             "Technical architecture",
           ],
         },
@@ -507,7 +513,7 @@ export const resume = {
     {
       label: "Oracle integration and ERP",
       value:
-        "Oracle Integration Cloud, Oracle Fusion HCM, Oracle Fusion Financials, BI Publisher, HDL, FBDI, REST APIs, SOAP services, SFTP, Technical architecture",
+        "Oracle Integration Cloud, Oracle Fusion HCM, Oracle Fusion Financials, BI Publisher, HDL, FBDI, REST APIs, SOAP services, SFTP, XSLT/XPath mapping, JSON, WSDL, OIC adapters, connections and lookups, ESS job submission, UCM, Technical architecture",
     },
     { label: "Data", value: "Oracle SQL, PL/SQL, Oracle Database, SQL, MySQL" },
     {
