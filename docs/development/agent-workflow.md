@@ -69,6 +69,10 @@ Open the PR against `main` using `.github/pull_request_template.md`. With the Gi
 
 After the PR exists, put its URL in the task record in a follow-up commit.
 
+### Stacked PRs
+
+Avoid them. If one is unavoidable (the task needs files from an unmerged PR), state the dependency at the top of the PR and in `depends-on`. When the parent merges, **retarget the child to `main` before merging it**, or merge the child first. A child merged after its parent has landed, while its base is still the parent's branch, lands only on that branch and never reaches `main`. This happened to PR #3 on 2026-11-07 and was recovered with a new PR to `main`. Enabling "automatically delete head branches" lets GitHub retarget children for you.
+
 ## Revalidating against an updated base
 
 Merge `origin/main` into your branch (do not rebase a pushed branch):
