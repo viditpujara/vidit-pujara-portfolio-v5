@@ -9,8 +9,14 @@ The existing canonical domain is `https://viditpujara.me`.
 3. Deploy a fresh reviewed build. Runtime variable changes do not repair statically
    generated metadata from an old build.
 4. Redirect historical v1–v5 and www hosts permanently to the canonical host, keeping
-   valid paths. Configure this at the hosting/domain layer; never redirect `.me`
-   back to itself. Keep branch preview hosts noindex.
+   valid paths. `next.config.ts` now does this for any of those hosts that this app
+   serves (a 308 to `https://viditpujara.me` with the same path; the canonical host never
+   redirects, so there is no loop). It only takes effect once this build is deployed.
+   Hosts served by a different deployment or that no longer resolve to a project
+   are not covered: on 7 November 2026 `v5` and `www` served this site, `v3` and `v4`
+   still served older copies (they look like separate Vercel projects) and `v1` and `v2`
+   returned 404. Those need a redirect (or their domain removed) at the hosting/domain
+   layer. Keep branch preview hosts noindex.
 5. Check live HTML: exact `.me` canonical, correct public title and index/follow;
    robots Allow plus `.me` sitemap; all 18 sitemap entries on `.me`; no header noindex.
 6. Verify Search Console ownership (DNS preferred). If using HTML verification, set

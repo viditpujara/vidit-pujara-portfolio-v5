@@ -12,9 +12,11 @@ Updated 1 November 2026. Local code changes and verification are tracked in
    `NEXT_PUBLIC_SITE_ENV=production`, build/deploy the reviewed commit, and verify
    live robots/canonicals/sitemap and the PDF. Leave Preview non-production.
    No hosting credentials or connected browser session were available in this task.
-3. **Domain routing:** permanently redirect v1–v5 and the alternate www hostname to
-   the canonical `.me` site, preserving valid paths and avoiding self-redirect loops.
-   The domain already exists; buying another domain is not a prerequisite.
+3. **Domain routing:** `next.config.ts` now redirects v1–v5 and www to the canonical `.me`
+   site (same path) for hosts this app serves, once deployed. Still to do at the hosting
+   layer: v3 and v4 (separate deployments serving older copies) and v1 and v2 (404) need
+   a permanent redirect to `.me` or their domain removed. The domain already exists;
+   buying another domain is not a prerequisite.
 4. **Search Console:** verify ownership, submit the `.me` sitemap, inspect canonical.
 5. **Public history/privacy:** coordinate removal of the former private QA fixture
    from Git history where required. Its values have been removed from current code;
