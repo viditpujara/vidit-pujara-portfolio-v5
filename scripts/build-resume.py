@@ -48,7 +48,8 @@ doc = SimpleDocTemplate(str(output), pagesize=A4, rightMargin=43, leftMargin=43,
                         title=data["metadataTitle"], author=data["name"],
                         keywords=data.get("keywords", ""))
 story = [paragraph(data["name"], "name"), paragraph(data["title"], "title"),
-         paragraph(data["tagline"], "contact"), paragraph(data["contact"], "contact"),
+         paragraph(data["tagline"], "contact"),
+         Paragraph(escape(data["contact"]) + ' | <link href="%s">%s</link>' % (data["phoneHref"], escape(data["phone"])), styles["contact"]),
          Paragraph('<link href="mailto:vidit.pujara@zohomail.in">vidit.pujara@zohomail.in</link> | '
                    '<link href="https://viditpujara.me">viditpujara.me</link> | '
                    '<link href="https://www.linkedin.com/in/viditpujara">linkedin.com/in/viditpujara</link>', styles["contact"])]

@@ -6,6 +6,8 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
+SOURCE = json.loads((ROOT/'docs/resume.json').read_text())
+PHONE, PHONE_HREF = SOURCE['phone'], SOURCE['phoneHref']
 reader = PdfReader(ROOT/'public/vidit-pujara-oracle-fusion-technical-consultant-resume.pdf')
 assert len(reader.pages) == 2, 'Expected two complete pages'
 text = re.sub(r'\s+', ' ', ' '.join(page.extract_text() for page in reader.pages))
@@ -16,8 +18,9 @@ for required in ['Consultant I | Mastek','CERTIFICATIONS','Oracle APEX','2 to 3 
                  'OIC Gen 3','OIC connectivity agent','ServiceNow','Studied, no project delivery yet',
                  'US Energy Infrastructure Client | Oracle Fusion HCM Integrations']:
     assert required in text, f'Missing reviewed content: {required}'
-assert not re.search(r'\+91|tel:|Oracle ERP Technical Consultant|two additional', text, re.I), 'Stale/private copy present'
-allowed = {'mailto:vidit.pujara@zohomail.in','https://viditpujara.me','https://www.linkedin.com/in/viditpujara'}
+assert PHONE in text, 'Owner-approved phone number missing'
+assert not re.search(r'\+91|tel:|Oracle ERP Technical Consultant|two additional', text.replace(PHONE, ''), re.I), 'Stale/private copy or another phone number present'
+allowed = {'mailto:vidit.pujara@zohomail.in','https://viditpujara.me','https://www.linkedin.com/in/viditpujara', PHONE_HREF}
 uris = []
 for page in reader.pages:
     for ref in page.get('/Annots', []):
@@ -34,4 +37,4 @@ terms = ROOT/'.qa-private.json'
 if terms.exists():
     for term in json.loads(terms.read_text()):
         assert not re.search(r'(?<!\w)'+re.escape(term)+r'(?!\w)', text, re.I), 'Private denylist match (redacted)'
-print('PASS public PDF: two pages, reviewed facts, intended links, no phone or form fields.')
+print('PASS public PDF: two pages, reviewed facts, intended links, only the owner-approved phone number, no form fields.')

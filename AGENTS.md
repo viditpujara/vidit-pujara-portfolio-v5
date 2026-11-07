@@ -25,7 +25,7 @@ The owner's instruction can change the plan or scope of a task. It does not remo
 
 - Install with `npm ci --ignore-scripts`. Build with `npm run build` (it uses `next build --webpack`).
 - Production builds require `NEXT_PUBLIC_SITE_ENV=production` and `NEXT_PUBLIC_SITE_URL=https://viditpujara.me` at build time. Preview builds must never enable the production flag. Never weaken `src/lib/environment.ts`, the QA checks, the security headers or the secret scanning to make a check pass.
-- Public content names no clients, vendors or internal systems, and publishes no phone number. Keep `.qa-private.json` ignored.
+- Public content names no clients, vendors or internal systems, and publishes no phone number other than the owner-approved `identity.phone`. Keep `.qa-private.json` ignored.
 - Do not invent facts, counts or credentials. Ranges stay ranges. Unverified claims are not published. See `CONTENT_VERIFICATION.md` and `PRIVACY_REVIEW.md`.
 - The TripTogether repository link stays withheld until key rotation is verified (`REMAINING_MANUAL_ACTIONS.md`).
 - Do not rewrite Git history, rotate credentials, change DNS, hosting, GitHub settings or production environment variables without explicit authorization.

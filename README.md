@@ -70,7 +70,7 @@ browser download filename is `Vidit_Pujara_Oracle_Fusion_Technical_Consultant_OI
 `/resume` offers the download and a separate Print/Save as PDF action.
 
 Editable content lives in `docs/resume.json`. This is a regenerated public copy
-based on the supplied PDF, with Consultant I, certifications, no phone number,
+based on the supplied PDF, with Consultant I, certifications, the owner-approved phone number,
 and the vague second-project block removed. The original in Downloads is untouched.
 
 ```bash
@@ -87,7 +87,7 @@ lives elsewhere, for example on macOS, set `RESUME_FONT_DIR` to the directory ho
 `DejaVuSans.ttf` and `DejaVuSans-Bold.ttf`. The PDF builder writes an ignored `output/pdf/` copy and the
 public asset. Render every page with `pdftoppm` and inspect the final layout after
 edits; text checks alone cannot prove layout quality. Keep public PDF content and
-`src/content` facts aligned. Never copy a phone/client-named source straight into
+`src/content` facts aligned. Never copy a client-named or unreviewed source straight into
 `public/`.
 
 ## Architecture and content
@@ -114,7 +114,7 @@ TripTogether's external repository action is withheld pending provider revocatio
 and history-cleanup verification. Removing a link does not revoke credentials.
 Public Supabase keys need an RLS/auth review; elevated secrets must stay server-side.
 
-The source/HTTP checks never embed private client names or phone values. An optional
+The source/HTTP checks never embed private client names, and reject any phone number other than `identity.phone`. An optional
 ignored `.qa-private.json` array supplies private terms locally; CI can supply its
 path through `QA_PRIVATE_TERMS_FILE`. Values are redacted in failures. This private
 fixture is not a replacement for source/history cleanup.

@@ -85,6 +85,17 @@ export default function ContactPage() {
             >
               <DataRow label="Email" value={identity.email} />
               <DataRow
+                label="Phone"
+                value={
+                  <a
+                    href={identity.phoneHref}
+                    className="link inline-block min-h-[26px] py-[3px]"
+                  >
+                    {identity.phone}
+                  </a>
+                }
+              />
+              <DataRow
                 label="Based in"
                 value={`${identity.locality}, ${identity.region}, ${identity.country}`}
               />

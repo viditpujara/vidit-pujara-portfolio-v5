@@ -38,7 +38,10 @@ test("résumé facts match the confirmed identity and avoid stale support counts
   const resume = readFileSync("docs/resume.json", "utf8");
   assert.match(resume, /Consultant I \| Mastek/);
   assert.match(resume, /CERTIFICATIONS/);
-  assert.doesNotMatch(resume, /tel:|\+91|two additional/i);
+  assert.doesNotMatch(resume, /two additional/i);
+  const site = readFileSync("src/content/site.ts", "utf8");
+  const phone = JSON.parse(resume).phone;
+  assert.ok(phone && site.includes(`phone: "${phone}"`), "résumé and site phone numbers must match");
 });
 test("web and PDF résumé summaries share the agreed key phrases", () => {
   const sections = JSON.parse(readFileSync("docs/resume.json", "utf8")).pages.flat();

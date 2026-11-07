@@ -19,6 +19,9 @@ export const identity = {
   region: "Gujarat",
   country: "India",
   email: "vidit.pujara@zohomail.in",
+  /** Published on the owner's instruction, 7 November 2026. The only phone number allowed on the site and PDF. */
+  phone: "+91 8401005481",
+  phoneHref: "tel:+918401005481",
   linkedin: "https://www.linkedin.com/in/viditpujara",
   github: "https://github.com/viditpujara",
   monogram: "VP",

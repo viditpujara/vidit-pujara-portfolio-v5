@@ -32,6 +32,14 @@ class ReleaseRegressions(unittest.TestCase):
         errors = qa.check_page('<meta name="robots" content="index,follow">', {'x-robots-tag':'noindex'}, '/', 'https://example.com', 'production')
         self.assertIn('production indexing prohibited', errors)
 
+    def test_only_the_owner_phone_is_allowed(self):
+        phone, href = qa.OWNER_PHONE
+        self.assertTrue(phone and href)
+        def check(body):
+            return qa.check_page(f'<main><h1>x</h1>{body}</main>', {}, '/', 'https://example.com', 'production')
+        self.assertNotIn('public phone detail present', check(f'<a href="{href}">{phone}</a>'))
+        self.assertIn('public phone detail present', check('<a href="tel:+911234567890">+91 1234567890</a>'))
+
     def test_failed_browser_process_fails_release(self):
         origin = 'https://example.com'
         headers = {name: 'present' for name in ['x-content-type-options','x-frame-options','referrer-policy','permissions-policy','content-security-policy']}

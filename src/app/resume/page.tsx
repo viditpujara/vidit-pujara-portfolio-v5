@@ -75,6 +75,14 @@ export default function ResumePage() {
               </li>
               <li>
                 <a
+                  href={identity.phoneHref}
+                  className="link inline-block min-h-[26px] py-[3px]"
+                >
+                  {identity.phone}
+                </a>
+              </li>
+              <li>
+                <a
                   href={identity.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -253,8 +261,8 @@ export default function ResumePage() {
 
           <Note register="record" className="mt-12 border-t border-rule pt-6">
             Every figure on this résumé is published in the form it was verified
-            in. Ranges stay ranges, and no phone number is published on this
-            site.
+            in. Ranges stay ranges, and the only phone number published on this
+            site is the one at the top of this page.
           </Note>
         </div>
       </Shell>

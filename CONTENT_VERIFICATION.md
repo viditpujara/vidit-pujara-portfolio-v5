@@ -34,12 +34,16 @@ Updated 7 November 2026 (first recorded 1 November). This supersedes the earlier
   descriptor from the owner's earlier résumé; the site says only "a second
   implementation project". Integration and report counts for this project were not
   supplied and are not claimed.
+- **Phone number published on the owner's instruction, 7 November 2026:** `identity.phone`
+  (`src/content/site.ts`) appears on the contact page, the résumé page and in the PDF
+  header (with a `tel:` link), and nowhere else. The QA checks, `verify-resume.py` and a
+  unit test allow only this number. It is in a public repository and site.
 - The career-direction text was made neutral on 7 November 2026 ("deeper solution
   design, VBCS extensions and AI enabled automation"); it is still a direction, not a title.
 - Credentials retain the previously recorded issuer links; no new live issuer
   verification is claimed by this implementation.
 - The downloadable résumé was regenerated from the supplied reviewed PDF with
-  Consultant I, certifications, generic client descriptions and no phone. Its
+  Consultant I, certifications and generic client descriptions. Its
   editable content is `docs/resume.json`; the original Downloads file is unchanged.
 - The earlier generic second implementation-project bullet was replaced on 7 November
   2026 by the owner-supplied description above, not by invented detail. The

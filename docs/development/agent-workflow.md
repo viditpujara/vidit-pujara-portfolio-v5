@@ -97,7 +97,7 @@ State these explicitly in the PR when they apply:
 - **Security review:** changes to `next.config.ts` headers, `src/lib/environment.ts`, `.github/`, dependencies, secret scanning, or anything touching credentials.
 - **Dependencies:** a new or updated dependency needs a recorded reason and the owner's approval. Run `npm audit --omit=dev`.
 - **Performance and accessibility:** page or UI changes get responsive (390/768/1440 px), keyboard and reduced-motion checks.
-- **Privacy:** published content must not name clients, vendors or systems, or include a phone number.
+- **Privacy:** published content must not name clients, vendors or systems, or include a phone number other than the owner-approved `identity.phone`.
 
 ## What GitHub can enforce and what is procedural
 
