@@ -10,7 +10,7 @@ requirements: none (owner's governance brief, 2026-11-07)
 branch: agent/claude-code/2026-11-07-repository-governance
 status: ready-for-review
 commits: see `git log agent/claude-code/2026-11-07-repository-governance`
-pr: not created by the agent; see section G
+pr: https://github.com/viditpujara/vidit-pujara-portfolio-v5/pull/2
 continues:
 depends-on:
 ---
@@ -82,6 +82,6 @@ Recorded in [docs/decisions/0001-repository-governance.md](../../../decisions/00
 - **Remaining work (separate tasks):** optional `scripts/check-governance.py`; sanitised import of the portfolio requirement documents; the portfolio content alignment plan prepared earlier in this session.
 - **Known risks:** agents may ignore rules their tool does not load (hence the probe); the rule file will need small revisions once the probe is run.
 - **Rollback:** revert the merge commit (`git revert -m 1 <sha>`). Nothing outside documentation, agent rule files and `.github/` templates changes.
-- **Pull request:** see the hand-off note in the session. If no PR link is shown, the agent could not open one; the compare URL is `https://github.com/viditpujara/vidit-pujara-portfolio-v5/compare/main...agent/claude-code/2026-11-07-repository-governance`.
+- **Pull request:** [#2](https://github.com/viditpujara/vidit-pujara-portfolio-v5/pull/2). The first push failed for lack of credentials (HTTPS remote, no helper). It was pushed afterwards using the owner's `gh` login for that one command, with the owner's go-ahead. CI had two checks passing and three pending when last read; the final result is on the PR.
 - **Reviewer instructions:** read `AGENTS.md` first; check `.github/pull_request_template.md` against your 18 required PR items; skim `docs/development/agent-workflow.md`; confirm no application files changed in the diff.
 - **Recommended review decision:** Ready for human review. This is a recommendation, not an approval. CI has not been observed for this branch yet.
