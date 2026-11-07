@@ -68,7 +68,7 @@ export const home = {
     "First full time role after graduation. Assigned integration modules across Oracle Fusion HCM and Oracle Fusion Financials, working from design through post go live support under the mentorship of technical leads.",
   experiencePoints: [
     "Three implementation projects delivered from start to finish",
-    "Concurrent OIC production support across multiple client environments",
+    "Concurrent OIC production support across 2 to 3 client environments, depending on the client",
     "Oracle ADF application support alongside OIC delivery",
     "Work promoted across Development, Test, UAT and Production",
     "Delivery teams of approximately 15 to 20 members",
@@ -117,7 +117,7 @@ export const about = {
     {
       index: "04",
       title: "What enterprise integration turned out to be",
-      body: "Around twenty to twenty five integrations later, the pattern is consistent. Read from a source that will not always behave, stage it so a run can be inspected, compare it against what Oracle Fusion already holds, apply only what changed, then map every error back to the record that caused it.",
+      body: "Twenty or more integrations later, the pattern is consistent. Read from a source that will not always behave, stage it so a run can be inspected, compare it against what Oracle Fusion already holds, apply only what changed, then map every error back to the record that caused it.",
     },
     {
       index: "05",
@@ -188,7 +188,7 @@ export const experience = {
       title: "Environments and support",
       points: [
         "Promoted and validated work across Development, Test, UAT and Production.",
-        "Supported live OIC integrations for multiple client environments concurrently, investigating run logs and exception reports, identifying root causes, and coordinating correction and reprocessing.",
+        "Supported live OIC integrations for 2 to 3 client environments concurrently, depending on the client, investigating run logs and exception reports, identifying root causes, and coordinating correction and reprocessing.",
         "Provided Oracle ADF application support for a UK local-government client alongside OIC support work.",
       ],
     },
@@ -506,7 +506,7 @@ export const contact = {
 
 export const resume = {
   summary:
-    "Oracle Fusion Technical Consultant with 2+ years at Mastek building Oracle Integration Cloud (OIC) integrations for Oracle Fusion HCM and Financials. Around twenty to twenty five integrations built, tested and deployed across Development, Test, UAT and Production, supported by BI Publisher reporting, HDL and FBDI loading, REST and SOAP interfaces, SFTP file handling and database driven processing, including mapping Oracle load errors back to source records for correction and reprocessing. Oracle APEX Cloud Certified Developer Professional.",
+    "Oracle Fusion Technical Consultant with 2+ years at Mastek building Oracle Integration Cloud (OIC) integrations for Oracle Fusion HCM and Financials. 20+ integrations built, tested and deployed across Development, Test, UAT and Production, supported by BI Publisher reporting, HDL and FBDI loading, REST and SOAP interfaces, SFTP file handling and database driven processing, including mapping Oracle load errors back to source records for correction and reprocessing. Oracle APEX Cloud Certified Developer Professional.",
   metricsNote:
     "Manual expense report creation and manual employee bank account creation were each eliminated for one automated workflow. Figures are approximate where counted rather than measured.",
   coreSkills: [

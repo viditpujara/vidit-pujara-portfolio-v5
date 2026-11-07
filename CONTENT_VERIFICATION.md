@@ -6,10 +6,13 @@ Updated 7 November 2026 (first recorded 1 November). This supersedes the earlier
   Experience surfaces derive it from `identity.officialDesignation`.
 - **Oracle Fusion Technical Consultant** is the public headline; OIC is the specialism.
 - The supplied current résumé supports concurrent multi-client OIC production
-  support and separate Oracle ADF application support. No precise concurrent
-  environment count was supplied; all surfaces use “multiple.”
+  support and separate Oracle ADF application support. On 7 November 2026 the
+  owner stated the concurrent count is 2 to 3 client environments, depending on the
+  client; surfaces now say “2 to 3 client environments”.
 - The obsolete two-additional-project count is removed from copy, metrics and charts.
-- Approximate 20–25 integrations, 10–15 BIP reports, processing volumes, team size,
+- On 7 November 2026 the owner chose “20+” integrations and “10+” BI Publisher
+  reports on both the PDF and the site. They are lower bounds consistent with the
+  earlier 20–25 and 10–15 figures. Processing volumes, team size (15 to 20),
   three implementations and workflow-specific outcomes retain their original scope.
 - PL/SQL is backed by the published integration narratives.
 - **OIC keywords added on the owner's instruction, 7 November 2026:** XSLT/XPath

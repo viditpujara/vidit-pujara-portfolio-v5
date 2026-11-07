@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 reader = PdfReader(ROOT/'public/vidit-pujara-oracle-fusion-technical-consultant-resume.pdf')
 assert len(reader.pages) == 2, 'Expected two complete pages'
 text = re.sub(r'\s+', ' ', ' '.join(page.extract_text() for page in reader.pages))
-for required in ['Consultant I | Mastek','CERTIFICATIONS','Oracle APEX','multiple client environments','Oracle ADF',
+for required in ['Consultant I | Mastek','CERTIFICATIONS','Oracle APEX','2 to 3 client environments','Oracle ADF',
                  '20+ inbound and outbound integrations','10+ BI Publisher reports',
                  'Oracle APEX Cloud Certified Developer Professional.','Also: Oracle APEX (certified)',
                  'XSLT/XPath mapping','OIC adapters, connections and lookups','ESS job submission']:

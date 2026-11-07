@@ -36,6 +36,7 @@ depends-on: 2026-11-07-repository-governance
 
 - **Plan:** the session's plan (phases 0–4 implemented; phase 5 external and phase 6 evidence-gated not implemented).
 - **Owner approval:** the owner told the agent in chat to implement the plan, without answering its four open questions. The agent had stated beforehand that it would use these defaults, and applied them: (Q1) "20+" and "10+" in the PDF only, site ranges kept; (Q2) neutral direction wording; (Q3) phone stays out of the public PDF and site; (Q4) GitHub links kept on the site.
+- **Owner answers, later the same day:** Q1 "follow the PDF" (the site now also says "20+" and "10+"); Q2 and Q4 "keep as it is" (neutral direction wording and the GitHub links stay); Q3 was answered "yes", but the question could be read either way (show the phone number, or keep it out), so the phone number stays out until the owner clarifies; concurrent support is "2 to 3" client environments depending on the client; add specifics for the second implementation project (details not yet supplied, so nothing was added); add a few more OIC keywords (which ones not yet specified, so nothing was added).
 - **Acceptance criteria:** PDF is two pages and passes `verify-resume.py`; typecheck, lint, tests, production build and the QA sweep pass; no stale "designed" or "AI Integration Architecture" wording remains in `src/`.
 
 ## D. Implementation record
@@ -56,6 +57,7 @@ depends-on: 2026-11-07-repository-governance
   - Added OIC keywords: `docs/resume.json` (Integration line), `src/content/pages.ts` (skills band and web résumé skills), `scripts/verify-resume.py` (asserts three of them), and recorded the change and its evidence level in `CONTENT_VERIFICATION.md`.
   - `README.md`: notes that the pinned `reportlab` needs Python 3.10+ and documents `RESUME_FONT_DIR`.
   - Cleaned up build outputs and temporary files created during the work (see section F).
+  - After the owner's answers (see section C): `src/content/metrics.ts` and `src/content/pages.ts` now say "20+" and "10+" (home and experience metrics, the delivery-scope graph, the about narrative and the web résumé summary); the delivery-scope graph rows became value rows with lower-bound captions; `src/app/experience/page.tsx` graph intro rewritten; the concurrent support statement says "2 to 3 client environments, depending on the client" in `docs/resume.json`, `pages.ts` and `metrics.ts`; `scripts/verify-resume.py` checks the new client wording; the PDF was rebuilt; `CONTENT_VERIFICATION.md` records both answers.
   - Not done, because they need account access or explicit authorization under `AGENTS.md`: Search Console, v1–v5 redirects, TripTogether key rotation, LinkedIn and GitHub profile changes, merging, and the requirements import (a separate task needing the owner's approval of sanitised summaries).
 - **Created:** this record and its index line. **Removed:** none.
 - **Behavioural changes:** copy and PDF content only. No layout, routing or configuration change.
@@ -63,7 +65,7 @@ depends-on: 2026-11-07-repository-governance
 
 ## E. Technical decisions
 
-- **PDF "20+" versus site "20 to 25":** "20+" is true under the range, so the two surfaces agree in substance while the PDF reads less hedged. Changing the site would require reworking the range graphs.
+- **"20+" and "10+" on both PDF and site:** chosen by the owner. They are lower bounds consistent with the earlier 20–25 and 10–15 figures. The delivery-scope graph now draws solid bars to 20 and 10 with a caption saying they are lower bounds; no range rows remain in the graphs (the 15 to 20 team size is still a text range).
 - **Neutral direction wording:** replaces the "AI Integration Architecture by 2028" career-title framing with the review documents' neutral line about solution design, VBCS and AI enabled automation. The "By 2028" timeline stage label stays because it is the owner's timeline.
 - **Rebuilding on macOS:** the PDF was first rebuilt with `reportlab` 4.5.1 on the system Python 3.9; a rebuild of the unchanged `resume.json` reproduced the committed PDF's page text exactly. After Python 3.15.2 was installed, the final PDF was rebuilt with the pinned `reportlab==5.1.0`, `pypdf==6.21.4` and `Pillow==13.0.0` from `scripts/requirements.txt`, in a throwaway virtual environment outside the repository, with DejaVu fonts taken from the `matplotlib` wheel. The version caveat no longer applies.
 - **OIC keywords:** added because the owner instructed it, not because the repository proves each one. See `CONTENT_VERIFICATION.md`. OTBI, HCM Extracts, Fast Formula and HSDL were not added.
@@ -82,6 +84,7 @@ depends-on: 2026-11-07-repository-governance
 | QA sweep | `python3 scripts/qa-sweep.py http://127.0.0.1:3100 --origin https://viditpujara.me --environment production` | PASS HTTP/content (18 routes) and 7 of 7 Playwright tests (390/768/1440 px, dialog, download, reduced motion, no-JS) |
 | Visual | home page viewed at desktop width in the in-app browser | new hero sentence and direction heading render correctly |
 | After follow-up (keywords, Python 3.15.2) | typecheck, lint, `npm test`, Python tests on 3.15.2, production build, QA sweep, `verify-resume.py` | all pass: 6 node tests, 5 Python tests, 18 routes and 7 of 7 Playwright tests; PDF still two pages; page 1 re-rendered and inspected |
+| After the owner's answers (20+/10+ on the site, 2 to 3 clients) | typecheck, lint, `npm test`, Python tests on 3.15.2, production build, QA sweep, `verify-resume.py` | all pass: 6 node tests, 5 Python tests, 18 routes, 7 of 7 Playwright tests; PDF page 1 re-rendered and inspected; experience-page graphs viewed in the in-app browser (bars and captions render correctly) |
 | CI on PR #3 before the follow-up | PR checks | 8 of 8 passing (read from the PR; the follow-up commit will run again) |
 
 - **Not run:** preview-mode build and QA (the PR's CI covers it); a visual pass of every changed page at 390 and 768 px beyond the automated overflow checks; `npm run security:scan` (no dependency or credential changes).
@@ -98,14 +101,14 @@ depends-on: 2026-11-07-repository-governance
 | R08 descriptions ≤155 | same | done, tested | `site.ts`, new test |
 | R10 duplicate bullet | `portfolio_cross_validation.md` §6 | done | `pages.ts` |
 | R14 direction narrative | `portfolio_cross_validation.md` §7.9, `product_management_fit.md` §4.5 | done with the neutral wording (Q2 default) | `pages.ts`, `figures.ts`, `site.ts` |
-| R17 "20+/10+" | `final_resume_improvement_patch.md` §2 | PDF only (Q1 default) | `resume.json` |
+| R17 "20+/10+" | `final_resume_improvement_patch.md` §2 | PDF and site (owner's answer to Q1) | `resume.json`, `metrics.ts`, `pages.ts` |
 | R18 "designed" | `word_by_word_resume_review.md` S2, E1 | done | `metrics.ts`, `pages.ts`, `case-studies.ts` |
 | R20 phone | `final_resume_improvement_patch.md` §1 | intentionally not applied (Q3 default; privacy policy) | none |
 | R21–R23 summary and skills | `final_resume_improvement_patch.md` §2–3 | done in PDF and web summary | `resume.json`, `pages.ts` |
 | R32 PDF keywords | `ats_and_keyword_report.md` §7.10 | done | `build-resume.py`, `resume.json` |
 | R41 "Oracle ERP" | `market_fit_and_title_analysis.md` §3 | done in contact copy and keyword arrays | `pages.ts`, three page files |
 
-- **Deferred or blocked:** the concurrent-client count and second-project specifics need the owner's facts; OTBI, HCM Extracts and Fast Formula stay out until evidenced (the other OIC keywords are now in, on the owner's instruction); account-side items (Search Console, v1–v5 redirects, TripTogether key rotation, LinkedIn and GitHub profile cleanup); Q4 (GitHub links) remains at its default.
+- **Deferred or blocked:** second-project specifics (module, number of integrations and reports, integration pattern) and the choice of further OIC keywords are waiting for the owner's details; Q3 (phone number) is waiting for clarification and stays out meanwhile; OTBI, HCM Extracts and Fast Formula stay out until evidenced (the other OIC keywords are now in, on the owner's instruction); account-side items (Search Console, v1–v5 redirects, TripTogether key rotation, LinkedIn and GitHub profile cleanup); Q4 (GitHub links) remains at its default.
 - **Known risks:** copy decisions rest on the stated defaults; the owner may want Q1–Q4 settled differently. The added OIC keywords are claims on a public résumé: lookups, WSDL, UCM and XSLT/XPath mapping have no specific support in the repository, so the owner should be able to explain each in an interview.
 - **Rollback:** revert the merge commit; restoring `docs/resume.json` and re-running the build restores the previous PDF text.
 - **Reviewer instructions:** read the PDF (`public/…resume.pdf`) and the home, about and experience pages; check the diff of `src/content/` for wording you disagree with; confirm the defaults in section C.

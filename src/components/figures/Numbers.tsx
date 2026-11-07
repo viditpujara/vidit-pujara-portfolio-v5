@@ -13,7 +13,7 @@ const NUMBER = /\d[\d,]*/g;
  * the string exactly as written.
  *
  * This matters for accuracy, not decoration. Several figures on this site are
- * ranges, and a range must stay a range: "20 to 25" animates as two numbers
+ * ranges, and a range must stay a range: "15 to 20" animates as two numbers
  * with the word between them untouched, and "DEV to PROD" contains no numbers
  * so it never animates at all. Nothing is rounded, and the final frame is
  * always the exact published string.
