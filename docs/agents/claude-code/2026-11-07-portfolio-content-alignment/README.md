@@ -10,7 +10,7 @@ requirements: none imported yet; the plan's local R-IDs are mapped in section G
 branch: agent/claude-code/2026-11-07-portfolio-content-alignment
 status: ready-for-review
 commits: see `git log agent/claude-code/2026-11-07-portfolio-content-alignment`
-pr: https://github.com/viditpujara/vidit-pujara-portfolio-v5/pull/3
+pr: https://github.com/viditpujara/vidit-pujara-portfolio-v5/pull/4 (the earlier stacked PR #3 was merged into the governance branch, not main)
 continues:
 depends-on: 2026-11-07-repository-governance
 ---
